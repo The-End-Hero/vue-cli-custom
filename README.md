@@ -1,6 +1,6 @@
-# vue-cli-xxx
+# vue-cli-custom
 
-> A Vue.js project (Custom Multi page)
+> Not only a Vue.js project (Custom Multi page Vue/React)
 
 ## Build Setup
 
@@ -30,6 +30,6 @@ modules--页面模块
 
 多页面入口以及输出 依赖于 html-webpack-plugin插件，在utils中有详细注释
 
-
+多页面支持react，无缝切换。
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
