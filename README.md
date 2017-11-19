@@ -30,7 +30,7 @@ modules--页面模块
 
 多页面入口以及输出 依赖于 html-webpack-plugin插件，在utils中有详细注释.
 
-多页面支持react，无缝切换。
+多页面支持react，无缝切换,后期将支持react-router。
 
 
 
