@@ -208,72 +208,299 @@
 
 
         <!--个人中心-我推荐的-->
-        <div class="my-recommend">
-          <div class="my-recommend-title">我推荐的</div>
-          <div class="my-recommend-searchbar">
-            <span>姓名 ：</span>
-            <input type="text">
-            <span>应聘职位 ：</span>
-            <input type="text">
-            <span class="education-select">学历 ：</span>
-            <select>
-              <option value ="volvo">高中</option>
-              <option value ="saab">学士</option>
-              <option value="opel">硕士</option>
-              <option value="audi">博士</option>
-            </select>
-            <span class="my-recommend-search">搜索</span>
+        <!--<div class="my-recommend">-->
+          <!--<div class="my-recommend-title">我推荐的</div>-->
+          <!--<div class="my-recommend-searchbar">-->
+            <!--<span>姓名 ：</span>-->
+            <!--<input type="text">-->
+            <!--<span>应聘职位 ：</span>-->
+            <!--<input type="text">-->
+            <!--<span class="education-select">学历 ：</span>-->
+            <!--<select>-->
+              <!--<option value ="volvo">高中</option>-->
+              <!--<option value ="saab">学士</option>-->
+              <!--<option value="opel">硕士</option>-->
+              <!--<option value="audi">博士</option>-->
+            <!--</select>-->
+            <!--<span class="my-recommend-search">搜索</span>-->
+          <!--</div>-->
+          <!--<table class="myrecommend-table">-->
+            <!--<thead>-->
+            <!--<tr>-->
+              <!--<th>姓名</th>-->
+              <!--<th>应聘职位</th>-->
+              <!--<th>简历</th>-->
+              <!--<th>学历</th>-->
+              <!--<th>工作年限</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--张晓红-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--营销经理-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--查看-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--本科-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--3-5年-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--张晓红-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--营销经理-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--查看-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--本科-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--3-5年-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--张晓红-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--营销经理-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--查看-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--本科-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--3-5年-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+          <!--</table>-->
+        <!--</div>-->
+
+
+
+        <!--个人中心-我申请的-->
+        <!--<div class="my-apply">-->
+          <!--<div class="my-apply-title">我申请的</div>-->
+          <!--<div class="my-apply-searchbar">-->
+            <!--<span>职位名称：</span>-->
+            <!--<input type="text">-->
+            <!--<span>部门：</span>-->
+            <!--<input type="text">-->
+            <!--<span class="education-select">工作地点：</span>-->
+            <!--<select>-->
+            <!--<option value ="volvo">高中</option>-->
+            <!--<option value ="saab">学士</option>-->
+            <!--<option value="opel">硕士</option>-->
+            <!--<option value="audi">博士</option>-->
+            <!--</select>-->
+            <!--<span class="education-select">职位状态：</span>-->
+            <!--<select>-->
+              <!--<option value ="volvo">高中</option>-->
+              <!--<option value ="saab">学士</option>-->
+              <!--<option value="opel">硕士</option>-->
+              <!--<option value="audi">博士</option>-->
+            <!--</select>-->
+            <!--<span class="my-apply-search">搜索</span>-->
+          <!--</div>-->
+          <!--<table class="myapply-table">-->
+            <!--<thead>-->
+            <!--<tr>-->
+              <!--<th>职位名称</th>-->
+              <!--<th>部门</th>-->
+              <!--<th>职级</th>-->
+              <!--<th>学历</th>-->
+              <!--<th>工作年限</th>-->
+              <!--<th>工作地点</th>-->
+              <!--<th>发布时间</th>-->
+              <!--<th>职位状态</th>-->
+              <!--<th>操作</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--前端开发工程师-->
+              <!--</td>-->
+              <!--<td class="two">-->
+                <!--人力资源中心-人力资源支持-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--经理-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--本科-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--3-5年-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--上海-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--2017-07-11-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--在线-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--删除-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--前端开发工程师-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--人力资源中心-人力资源支持-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--经理-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--本科-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--3-5年-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--上海-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--2017-07-11-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--在线-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--删除-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--前端开发工程师-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--人力资源中心-人力资源支持-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--经理-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--本科-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--3-5年-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--上海-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--2017-07-11-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--在线-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--删除-->
+              <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+          <!--</table>-->
+
+        <!--</div>-->
+
+
+
+
+        <!--个人中心-创建简历-->
+        <div class="my-resume">
+          <div class="my-resume-title">我的简历</div>
+          <div class="my-resume-content clearfix">
+            <div class="my-resume-content-title twoline">基础信息</div>
+            <div class="create-resume-content-content">
+              <span>姓名：</span>
+              <input type="text">
+              <span>性别：</span>
+              <input type="text">
+              <span>出生日期：</span>
+              <input type="text">
+              <span>国籍：</span>
+              <input type="text">
+              <span>手机号：</span>
+              <input type="text">
+              <span>个人邮箱：</span>
+              <input type="text">
+              <span>工作年限：</span>
+              <select>
+                <option value="volvo">高中</option>
+                <option value="saab">学士</option>
+                <option value="opel">硕士</option>
+                <option value="audi">博士</option>
+              </select>
+              <span>现居住地：</span>
+              <input type="text">
+              <span>期望工作地：</span>
+              <input type="text">
+              <span>最高学历：</span>
+              <select>
+                <option value="volvo">高中</option>
+                <option value="saab">学士</option>
+                <option value="opel">硕士</option>
+                <option value="audi">博士</option>
+              </select>
+              <span>身份证号：</span>
+              <input type="text">
+            </div>
           </div>
-          <div class="my-recommend-table">
-            <div class="my-recommend-table-first">
-              <span>姓名</span>
-              <span>应聘职位</span>
-              <span>简历</span>
-              <span>学历</span>
-              <span>工作年限</span>
+          <div class="my-resume-content clearfix">
+            <div class="my-resume-content-title twoline">工作经历</div>
+            <div class="create-resume-content-content">
+              <span>工作单位：</span>
+              <input type="text">
+              <span>职位：</span>
+              <input type="text">
             </div>
-            <div class="my-recommend-table-list">
-              <span>张晓红</span>
-              <span>营销经理</span>
-              <span>查看</span>
-              <span>本科</span>
-              <span>3-5年</span>
+            <div class="create-resume-timer">
+              <span>工作时间：</span>
+              <input type="text">
+              <span class="link-time">~</span>
+              <input type="text">
             </div>
-            <div class="my-recommend-table-list">
-              <span>张晓红</span>
-              <span>营销经理</span>
-              <span>查看</span>
-              <span>本科</span>
-              <span>3-5年</span>
+            <div class="create-resume-text">
+              <span>职位描述：</span>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
             </div>
-            <div class="my-recommend-table-list">
-              <span>张晓红</span>
-              <span>营销经理</span>
-              <span>查看</span>
-              <span>本科</span>
-              <span>3-5年</span>
+            <div class="create-resume-content-line"></div>
+          </div>
+        </div>
+        <div class="my-resume-status">
+          <div class="my-resume-status-per">
+            <div class="my-resume-status-per-title">简历完成度 :<span>10%</span></div>
+            <div class="my-resume-status-per-per">
+              <div></div>
             </div>
-            <div class="my-recommend-table-list">
-              <span>张晓红</span>
-              <span>营销经理</span>
-              <span>查看</span>
-              <span>本科</span>
-              <span>3-5年</span>
-            </div>
-            <div class="my-recommend-table-list">
-              <span>张晓红</span>
-              <span>营销经理</span>
-              <span>查看</span>
-              <span>本科</span>
-              <span>3-5年</span>
-            </div>
-            <div class="my-recommend-table-list">
-              <span>张晓红</span>
-              <span>营销经理</span>
-              <span>查看</span>
-              <span>本科</span>
-              <span>3-5年</span>
-            </div>
+            <div class="preview_resume">预览简历</div>
+          </div>
+          <div class="my-resume-status-class">
+            <div class="my-resume-status-class-chosen">基础信息</div>
+            <div>教育经历</div>
+            <div>工作经历</div>
+            <div>项目经历</div>
+            <div>附件</div>
           </div>
         </div>
       </div>
@@ -304,6 +531,51 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped="scss">
+  .myrecommend-table {
+    border-collapse: collapse; /*相邻边被合并;separate: 边框独立*/
+    border: none;
+    width: 960px;
+  }
+  .myapply-table{
+    border-collapse: collapse; /*相邻边被合并;separate: 边框独立*/
+    border: none;
+    width: 960px;
+  }
+  .myapply-table td {
+    border: solid #CCC 1px;
+    height: 38px;
+    text-align: center;
+    /*width: 20%;*/
+    font-size: 14px;
+    color: #444444;
+    padding: 12px;
+  }
+  .myapply-table .two{
+    width: 163px;
+  }
+  .myapply-table th{
+    border: solid #CCC 1px;
+    height: 34px;
+    background: #F5F5F5;
+    font-size: 14px;
+    color: #444444;
+  }
+  .myrecommend-table td {
+    border: solid #CCC 1px;
+    height: 38px;
+    text-align: center;
+    width: 20%;
+    font-size: 14px;
+    color: #444444;
+  }
+
+  .myrecommend-table th{
+    border: solid #CCC 1px;
+    height: 34px;
+    background: #F5F5F5;
+    font-size: 14px;
+    color: #444444;
+  }
 .header{
   height: 40px;
   background: #F5F5F5;
@@ -712,48 +984,210 @@
     color: #ffffff;
     padding: 0 16px;
   }
-  .my-recommend-table-first{
-    background: #F5F5F5;
-    border: 1px solid #E4E4E4;
-    border-right: 0px solid #E4E4E4;
-    height: 36px;
-    font-size: 0;
-  }
-.my-recommend-table-first span{
-  display: inline-block;
-  vertical-align: top;
-  width: 20%;
-  text-align: center;
-  font-size: 14px;
-  color: #444444;
-  line-height: 36px;
-  /*border-right: 1px solid #E4E4E4;*/
-  box-shadow: 1px 0px 0px 0px #E4E4E4;
-}
-  .my-recommend-table-list{
+  /*.my-recommend-table-first{*/
     /*background: #F5F5F5;*/
-    border: 1px solid #E4E4E4;
-    border-right: 0px solid #E4E4E4;
-    border-top: 0px solid #E4E4E4;
-    min-height: 39px;
-    font-size: 0;
-  }
-.my-recommend-table-list span{
-  display: inline-block;
-  vertical-align: top;
-  width: 20%;
-  height: 100%;
-  text-align: center;
-  font-size: 14px;
-  color: #444444;
-  padding: 11px 0;
-  /*line-height: 39px;*/
-  /*border-right: 1px solid #E4E4E4;*/
-  box-shadow: 1px 0px 0px 0px #E4E4E4;
-}
+    /*border: 1px solid #E4E4E4;*/
+    /*border-right: 0px solid #E4E4E4;*/
+    /*height: 36px;*/
+    /*font-size: 0;*/
+  /*}*/
+/*.my-recommend-table-first span{*/
+  /*display: inline-block;*/
+  /*vertical-align: top;*/
+  /*width: 20%;*/
+  /*text-align: center;*/
+  /*font-size: 14px;*/
+  /*color: #444444;*/
+  /*line-height: 36px;*/
+  /*!*border-right: 1px solid #E4E4E4;*!*/
+  /*box-shadow: 1px 0px 0px 0px #E4E4E4;*/
+/*}*/
+  /*.my-recommend-table-list{*/
+    /*!*background: #F5F5F5;*!*/
+    /*border: 1px solid #E4E4E4;*/
+    /*border-right: 0px solid #E4E4E4;*/
+    /*border-top: 0px solid #E4E4E4;*/
+    /*min-height: 39px;*/
+    /*font-size: 0;*/
+  /*}*/
+/*.my-recommend-table-list span{*/
+  /*display: inline-block;*/
+  /*vertical-align: top;*/
+  /*width: 20%;*/
+  /*height: 100%;*/
+  /*text-align: center;*/
+  /*font-size: 14px;*/
+  /*color: #444444;*/
+  /*padding: 11px 0;*/
+  /*!*line-height: 39px;*!*/
+  /*!*border-right: 1px solid #E4E4E4;*!*/
+  /*box-shadow: 1px 0px 0px 0px #E4E4E4;*/
+/*}*/
   select{
     appearance:none;
     -moz-appearance:none;
     -webkit-appearance:none;
+  }
+
+
+
+  .my-apply{
+    width: 960px;
+    margin-left: 20px;
+    float: left;
+  }
+  .my-apply-title{
+    font-size: 18px;
+    color: #444444;
+    margin-bottom: 21px;
+    margin-top: 10px;
+    line-height: 18px;
+  }
+  .my-apply-searchbar{
+    height: 36px;
+    /*background: gainsboro;*/
+    font-size: 0;
+    margin-bottom: 20px;
+  }
+  .my-apply-searchbar input {
+    display: inline-block;
+    vertical-align: top;
+    width: 120px;
+    height: 34px;
+    padding: 0;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  .my-apply-searchbar select{
+    display: inline-block;
+    vertical-align: top;
+    width: 120px;
+    height: 36px;
+    padding: 0;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-left: 10px;
+    position: relative;
+    background: url("../pages/index/assets/logo.png") no-repeat scroll right center transparent;
+    background-size: 36px;
+  }
+  .my-apply-searchbar span {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    color: #444444;
+    line-height: 36px;
+  }
+  .my-apply-searchbar .my-apply-search{
+    background: #0091EA;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 0 16px;
+  }
+  .preview_resume{
+    font-size: 14px;
+    color: #0091EA;
+    margin-top: 20px;
+    margin-left: 23px;
+  }
+
+
+
+
+  .create-resume-content-content{
+    width: 384px;
+    /*min-height: 200px;*/
+    font-size: 0;
+  }
+  .create-resume-content-content span{
+     display: inline-block;
+     vertical-align: top;
+     width: 104px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #444444;
+    margin-top: 20px;
+  }
+  .create-resume-content-content input{
+    display: inline-block;
+    vertical-align: top;
+    width: 278px;
+    height: 34px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  .create-resume-content-content select{
+    display: inline-block;
+    vertical-align: top;
+    width: 278px;
+    height: 34px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin-top: 20px;
+    background: url("../pages/index/assets/logo.png") no-repeat scroll right center transparent;
+    background-size: 36px;
+  }
+  .create-resume-timer{
+    margin-top: 20px;
+    font-size: 0;
+  }
+  .create-resume-timer span{
+    display: inline-block;
+    vertical-align: top;
+    width: 104px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #444444;
+  }
+  .create-resume-timer input {
+    display: inline-block;
+    vertical-align: top;
+    width: 140px;
+    height: 34px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+  }
+  .create-resume-timer .link-time{
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+  }
+  .create-resume-text{
+    margin-top: 20px;
+    font-size: 0;
+  }
+  .create-resume-text span{
+    display: inline-block;
+    vertical-align: top;
+    width: 104px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #444444;
+  }
+  .create-resume-text textarea {
+    display: inline-block;
+    vertical-align: top;
+    width: 610px;
+    min-height: 120px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    padding: 0;
+    resize: none;
+  }
+  .create-resume-content-line{
+    height: 1px;
+    border-bottom: 1px dashed #E4E4E4;
+    /*margin: 15px 0;*/
+    margin-top: 20px;
+    margin-bottom: 15px;
   }
 </style>
