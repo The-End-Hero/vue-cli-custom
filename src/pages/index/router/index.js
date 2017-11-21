@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import UseLess from '@/components/UseLess'
+import UserCenter from '@/components/UserCenter'
+import HomePage from '@/components/HomePage'
+import SignIn from '@/components/SignIn'
 
 Vue.use(Router)
 
@@ -13,9 +15,19 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/test',
-      name: 'UseLess',
-      component: UseLess
+      path: '/UserCenter',
+      name: 'UserCenter',
+      component: UserCenter
+    },
+    {
+      path: '/HomePage',
+      name: 'HomePage',
+      component: HomePage
+    },
+    {
+      path: '/SignIn',
+      name: 'SignIn',
+      component: SignIn
     },
   ]
 })

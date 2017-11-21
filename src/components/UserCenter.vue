@@ -1,27 +1,28 @@
 <template>
   <div>
-    <div class="header">
-      <div class="header-contant">
-        <div>微信版</div>
-        <div>登陆 | 注册</div>
-        <div>欢迎来到红星美凯龙招聘！</div>
-      </div>
-    </div>
-    <div class="header-logo">
-      <div class="header-logo-contant">
-        <img class="header-logo-logo" src="http://www.chinaredstar.com/images/logo.jpg" alt="红星美凯龙">
-        <div class="header-logo-title">红星美凯龙招聘</div>
-      </div>
-    </div>
-    <div class="header-banner">
-      <div class="header-banner-list">
-        <li>首页</li>
-        <li>社会招聘</li>
-        <li>校园招聘</li>
-        <li>实习生招聘</li>
-        <li>个人中心</li>
-      </div>
-    </div>
+    <header-top></header-top>
+    <!--<div class="header">-->
+      <!--<div class="header-contant">-->
+        <!--<div>微信版</div>-->
+        <!--<div>登陆 | 注册</div>-->
+        <!--<div>欢迎来到红星美凯龙招聘！</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="header-logo">-->
+      <!--<div class="header-logo-contant">-->
+        <!--<img class="header-logo-logo" src="http://www.chinaredstar.com/images/logo.jpg" alt="红星美凯龙">-->
+        <!--<div class="header-logo-title">红星美凯龙招聘</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="header-banner">-->
+      <!--<div class="header-banner-list">-->
+        <!--<li>首页</li>-->
+        <!--<li>社会招聘</li>-->
+        <!--<li>校园招聘</li>-->
+        <!--<li>实习生招聘</li>-->
+        <!--<li>个人中心</li>-->
+      <!--</div>-->
+    <!--</div>-->
 
     <!--个人中心-->
     <div class="recruit">
@@ -508,19 +509,25 @@
 
 
 
-
-    <div class="footer">
-      <div class="footer-content">
-        <div>Copyright 2016 by red starCO,LTD.All rights reserved 沪ICP备12018312号-1</div>
-        <div>沪公网安备 31010702002586号</div>
-      </div>
-    </div>
+    <footer-buttom></footer-buttom>
+    <!--<div class="footer">-->
+      <!--<div class="footer-content">-->
+        <!--<div>Copyright 2016 by red starCO,LTD.All rights reserved 沪ICP备12018312号-1</div>-->
+        <!--<div>沪公网安备 31010702002586号</div>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </template>
 
 <script>
+  import HeaderTop from './HeaderTop.vue'
+  import FooterButtom from './FooterButtom.vue'
   export default {
     name: 'UseLess',
+    components:{
+      HeaderTop,
+      FooterButtom
+    },
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'
@@ -576,68 +583,68 @@
     font-size: 14px;
     color: #444444;
   }
-.header{
-  height: 40px;
-  background: #F5F5F5;
-  border-bottom: 1px solid #E4E4E4;
-}
-  .header-contant{
-    margin: 0 auto;
-    width: 1200px;
-    height: 20px;
-    margin-top: 10px;
-    font-family: PingFangSC-Regular;
-    font-size: 14px;
-    color: #666666;
-  }
-.header-contant >div{
-  float: right;
-  margin-left: 30px;
-}
-  .header-logo{
-    height: 100px;
-  }
-  .header-logo-contant{
-    margin: 0 auto;
-    width: 1200px;
-    height: 100px;
-  }
-  .header-logo-title{
-    font-family: PingFangSC-Medium;
-    font-weight: bold;
-    font-size: 22px;
-    color: #262626;
-    line-height: 30px;
-    float: left;
-    margin: 35px 28px;
-  }
-.header-logo-logo{
-  float: left;
-  display: block;
-  width: 170px;
-  height: 52px;
-  margin: 24px 0;
-}
-  .header-banner{
-    height: 50px;
-    background: #223857;
-    color: #fff;
-    font-size: 16px;
-    /*line-height: 50px;*/
-  }
-  .header-banner-list{
-    width: 1200px;
-    margin: 0 auto;
-    height: 50px;
-  }
-  .header-banner-list > li{
-    float: left;
-    font-family: PingFangSC-Medium;
-    font-size: 16px;
-    line-height: 22px;
-    color: #FFFFFF;
-    padding: 14px 40px;
-  }
+/*.header{*/
+  /*height: 40px;*/
+  /*background: #F5F5F5;*/
+  /*border-bottom: 1px solid #E4E4E4;*/
+/*}*/
+  /*.header-contant{*/
+    /*margin: 0 auto;*/
+    /*width: 1200px;*/
+    /*height: 20px;*/
+    /*margin-top: 10px;*/
+    /*font-family: PingFangSC-Regular;*/
+    /*font-size: 14px;*/
+    /*color: #666666;*/
+  /*}*/
+/*.header-contant >div{*/
+  /*float: right;*/
+  /*margin-left: 30px;*/
+/*}*/
+  /*.header-logo{*/
+    /*height: 100px;*/
+  /*}*/
+  /*.header-logo-contant{*/
+    /*margin: 0 auto;*/
+    /*width: 1200px;*/
+    /*height: 100px;*/
+  /*}*/
+  /*.header-logo-title{*/
+    /*font-family: PingFangSC-Medium;*/
+    /*font-weight: bold;*/
+    /*font-size: 22px;*/
+    /*color: #262626;*/
+    /*line-height: 30px;*/
+    /*float: left;*/
+    /*margin: 35px 28px;*/
+  /*}*/
+/*.header-logo-logo{*/
+  /*float: left;*/
+  /*display: block;*/
+  /*width: 170px;*/
+  /*height: 52px;*/
+  /*margin: 24px 0;*/
+/*}*/
+  /*.header-banner{*/
+    /*height: 50px;*/
+    /*background: #223857;*/
+    /*color: #fff;*/
+    /*font-size: 16px;*/
+    /*!*line-height: 50px;*!*/
+  /*}*/
+  /*.header-banner-list{*/
+    /*width: 1200px;*/
+    /*margin: 0 auto;*/
+    /*height: 50px;*/
+  /*}*/
+  /*.header-banner-list > li{*/
+    /*float: left;*/
+    /*font-family: PingFangSC-Medium;*/
+    /*font-size: 16px;*/
+    /*line-height: 22px;*/
+    /*color: #FFFFFF;*/
+    /*padding: 14px 40px;*/
+  /*}*/
 
   .recruit-content{
     width: 1200px;
@@ -646,11 +653,13 @@
     margin-top: 20px;
   }
   .recruit-content-left-banner{
+    box-sizing: border-box;
     float: left;
     width: 180px;
     min-height: 486px;
     background: #F5F5F5;
     padding-top: 10px;
+    padding-left: 51px;
     margin-bottom: 20px;
   }
   .recruit-content-left-banner>li{
@@ -704,19 +713,19 @@
     margin: 0 auto;
     text-align: center;
   }
-  .footer{
-    border-top: 1px solid #E4E4E4;
-    height: 83px;
-    /*width: 1200px;*/
-    text-align: center;
-    font-family: PingFangSC-Regular;
-    font-size: 14px;
-    color: #999999;
-    line-height: 22px;
-    box-sizing: border-box;
-    padding-top: 20px;
-    margin:auto;
-  }
+  /*.footer{*/
+    /*border-top: 1px solid #E4E4E4;*/
+    /*height: 83px;*/
+    /*!*width: 1200px;*!*/
+    /*text-align: center;*/
+    /*font-family: PingFangSC-Regular;*/
+    /*font-size: 14px;*/
+    /*color: #999999;*/
+    /*line-height: 22px;*/
+    /*box-sizing: border-box;*/
+    /*padding-top: 20px;*/
+    /*margin:auto;*/
+  /*}*/
 
 
 .clearfix:before,
