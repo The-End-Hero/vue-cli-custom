@@ -149,6 +149,7 @@
   .register{
     cursor: pointer;
     padding: 10px 0;
+    color: #666;
   }
   .header-contant .wechat{
     cursor: pointer;

@@ -4,11 +4,12 @@
     <div class="homepage">
       <img src="../pages/index/assets/beijintu01.png"/>
       <div class="homepage-searchbar">
-        <select>
-          <option value="volvo">社会招聘</option>
-          <option value="audi">校园招聘</option>
-          <option value="saab">实习生招聘</option>
-        </select>
+        <!--<select>-->
+          <!--<option value="volvo">社会招聘</option>-->
+          <!--<option value="audi">校园招聘</option>-->
+          <!--<option value="saab">实习生招聘</option>-->
+        <!--</select>-->
+        <button-select :from="homepage"></button-select>
         <input type="text" placeholder="请输入职位关键词">
         <span>搜索职位</span>
         <div class="hotposition">热门职位：
@@ -28,15 +29,25 @@
 <script>
   import HeaderTop from './HeaderTop.vue'
   import FooterButtom from './FooterButtom.vue'
+  import ButtonSelect from './ButtonSelect.vue'
   export default {
     name: 'UseLess',
     components:{
       HeaderTop,
-      FooterButtom
+      FooterButtom,
+      ButtonSelect
     },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        homepage:{
+          from:'homepage',
+          list:[
+            {msg:'社会招聘'},
+            {msg:'校园招聘'},
+            {msg:'实习生招聘'}
+          ]
+        },
       }
     }
   }
