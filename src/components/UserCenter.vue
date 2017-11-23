@@ -28,10 +28,10 @@
     <div class="recruit">
       <div class="recruit-content clearfix">
         <div class="recruit-content-left-banner">
-          <li>我的简历</li>
-          <li>我推荐的</li>
-          <li>我申请的</li>
-          <li>我收藏的</li>
+          <li><i class="icon iconfont"></i>我的简历</li>
+          <li><i class="icon iconfont"></i>我推荐的</li>
+          <li><i class="icon iconfont"></i>我申请的</li>
+          <li><i class="icon iconfont"></i>我收藏的</li>
         </div>
         <!--个人中心-我的简历(无简历)-->
         <!--<div class="recruit-content-right-noresume">-->
@@ -433,36 +433,42 @@
           <div class="my-resume-content clearfix">
             <div class="my-resume-content-title twoline">基础信息</div>
             <div class="create-resume-content-content">
-              <span>姓名：</span>
+              <span><i>*</i>姓名：</span>
               <input type="text">
-              <span>性别：</span>
+              <span><i>*</i>性别：</span>
               <input type="text">
-              <span>出生日期：</span>
+              <span><i>*</i>出生日期：</span>
               <input type="text">
-              <span>国籍：</span>
+              <span><i>*</i>国籍：</span>
               <input type="text">
-              <span>手机号：</span>
+              <span><i>*</i>手机号：</span>
               <input type="text">
-              <span>个人邮箱：</span>
+              <span><i>*</i>个人邮箱：</span>
               <input type="text">
-              <span>工作年限：</span>
-              <select>
-                <option value="volvo">高中</option>
-                <option value="saab">学士</option>
-                <option value="opel">硕士</option>
-                <option value="audi">博士</option>
-              </select>
-              <span>现居住地：</span>
+              <span><i>*</i>工作年限：</span>
+              <button v-on:click="showbuttondetail">
+                <i class="icon iconfont"></i>
+                <div class="button-list" ref="buttonList">
+                  <div>硕士</div>
+                  <div>本科</div>
+                  <div>大专</div>
+                  <div>中专</div>
+                </div>
+              </button>
+              <!--<select>-->
+                <!--<option value="volvo">高中</option>-->
+                <!--<option value="saab">学士</option>-->
+                <!--<option value="opel">硕士</option>-->
+                <!--<option value="audi">博士</option>-->
+              <!--</select>-->
+              <span><i>*</i>现居住地：</span>
               <input type="text">
-              <span>期望工作地：</span>
+              <span><i>*</i>期望工作地：</span>
               <input type="text">
-              <span>最高学历：</span>
-              <select>
-                <option value="volvo">高中</option>
-                <option value="saab">学士</option>
-                <option value="opel">硕士</option>
-                <option value="audi">博士</option>
-              </select>
+              <span><i>*</i>最高学历：</span>
+              <button>
+                <i class="icon iconfont"></i>
+              </button>
               <span>身份证号：</span>
               <input type="text">
             </div>
@@ -494,7 +500,7 @@
             <div class="my-resume-status-per-per">
               <div></div>
             </div>
-            <div class="preview_resume">预览简历</div>
+            <div class="preview_resume"><i class="icon iconfont"></i>预览简历</div>
           </div>
           <div class="my-resume-status-class">
             <div class="my-resume-status-class-chosen">基础信息</div>
@@ -527,6 +533,11 @@
     components:{
       HeaderTop,
       FooterButtom
+    },
+    methods: {
+      showbuttondetail:function () {
+        this.$refs.buttonList.style.display='block'
+      }
     },
     data () {
       return {
@@ -659,15 +670,42 @@
     min-height: 486px;
     background: #F5F5F5;
     padding-top: 10px;
-    padding-left: 51px;
     margin-bottom: 20px;
   }
   .recruit-content-left-banner>li{
     line-height: 48px;
-    font-family: .PingFangSC-Medium;
     font-size: 14px;
     color: #444444;
     font-weight: bold;
+    cursor: pointer;
+  }
+  .recruit-content-left-banner i{
+    padding-right: 9px;
+    padding-left: 28px;
+    font-size: 14px;
+  }
+  .button-list{
+    border: 1px solid #E4E4E4;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 #E4E4E4;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    background-color: #fff;
+    z-index: 9999;
+    display: none;
+  }
+  .button-list div{
+    height: 36px;
+    font-size: 14px;
+    line-height: 36px;
+    color: #666666;
+    box-shadow: 0px -1px 0px 0px #E4E4E4;
+  }
+  .button-list div:hover{
+    background: #0091EA;
+    color: #fff;
   }
   .recruit-content-right-noresume{
     float: left;
@@ -697,7 +735,6 @@
   }
   .recruit-content-right-noresume-words{
     height: 70px;
-    font-family: .PingFangSC-Regular;
     font-size: 16px;
     line-height: 70px;
     text-align: center;
@@ -750,7 +787,6 @@
 }
 .my-resume-title{
   margin-top: 10px;
-  font-family: .PingFangSC-Regular;
   font-size: 18px;
   color: #444444;
 }
@@ -833,7 +869,6 @@
   border: 1px solid #0091EA;
   border-radius: 4px;
   line-height: 38px;
-  font-family: .PingFangSC-Regular;
   font-size: 16px;
   color: #0091EA;
   padding: 0 28px ;
@@ -863,12 +898,10 @@
     margin-bottom: 30px;
   }
   .my-resume-status-per-title{
-    font-family: .PingFangSC-Regular;
     font-size: 14px;
     color: #666666;
   }
   .my-resume-status-per-title > span{
-    font-family: .PingFangSC-Regular;
     font-size: 14px;
     color: #0091EA ;
     /*line-height: 17px;*/
@@ -902,6 +935,7 @@
     padding: 15px 0;
     padding-left: 20px;
     user-select: none;
+    cursor: pointer;
   }
   .my-resume-status-class .my-resume-status-class-chosen{
     border-left: 3px solid #0091EA;
@@ -1102,9 +1136,14 @@
     font-size: 14px;
     color: #0091EA;
     margin-top: 20px;
-    margin-left: 23px;
+    line-height: 17px;
+    cursor: pointer;
+    /*margin-left: 23px;*/
   }
-
+  .preview_resume i{
+    padding-right: 10px;
+    font-size: 14px;
+  }
 
 
 
@@ -1112,6 +1151,11 @@
     width: 384px;
     /*min-height: 200px;*/
     font-size: 0;
+  }
+  .create-resume-content-content i{
+    font-size: 14px;
+    color: #E85043;
+
   }
   .create-resume-content-content span{
      display: inline-block;
@@ -1126,22 +1170,51 @@
   .create-resume-content-content input{
     display: inline-block;
     vertical-align: top;
-    width: 278px;
-    height: 34px;
+    width: 280px;
+    height: 36px;
     border: 1px solid #E4E4E4;
     border-radius: 4px;
     margin-top: 20px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #444444;
   }
   .create-resume-content-content select{
+    box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
-    width: 278px;
-    height: 34px;
+    width: 280px;
+    height: 36px;
     border: 1px solid #E4E4E4;
     border-radius: 4px;
     margin-top: 20px;
     background: url("../pages/index/assets/logo.png") no-repeat scroll right center transparent;
     background-size: 36px;
+  }
+  .create-resume-content-content button{
+    display: inline-block;
+    vertical-align: top;
+    width: 278px;
+    height: 36px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin-top: 20px;
+    background-color: #fff;
+    position: relative;
+  }
+  .create-resume-content-content button i{
+    position: absolute;
+    color: #444444;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    top: -1px;
+    right: -1px;
+    background: #F5F5F5;
+    border: 1px solid #E4E4E4;
+    border-radius: 0 4px 4px 0;
+    box-sizing: border-box;
   }
   .create-resume-timer{
     margin-top: 20px;
