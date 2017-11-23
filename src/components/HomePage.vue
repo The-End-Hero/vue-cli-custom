@@ -112,5 +112,6 @@
   }
 .hotposition>span{
   margin-right: 15px;
+  cursor: pointer;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <button v-on:click="showbuttondetail" :class="from.from==='homepage'?'homepagebtn':''">{{from.list[0].msg}}
+  <button v-on:click="showbuttondetail" :class="from.from==='homepage'?'homepagebtn':''">{{name}}
     <i class="icon iconfont"></i>
-    <div class="button-list" ref="buttonList">
+    <div class="button-list" ref="buttonList" v-if="isshow">
       <div v-for="site in from.list" v-on:click="checked">{{site.msg}}</div>
       <!--<div>校园招聘</div>-->
       <!--<div>实习生招聘</div>-->
@@ -15,17 +15,25 @@
     name: 'Header',
     methods: {
       showbuttondetail:function () {
-        this.$refs.buttonList.style.display='block'
+        //this.$refs.buttonList.style.display='block'
+        this.isshow = true
       },
-      checked:function () {
-        console.log(this.msg)
-        console.log(this.msg)
-        console.log(from)
+      checked:function (el) {
+        console.log(this.$refs.buttonList)
+//        this.$refs.buttonList.style.display='none'
+        this.isshow = false
+        console.log(this.$refs.buttonList.style.display)
+        console.log(this.isshow,'isshow')
+        console.log(this.state)
+        console.log(el.target.innerHTML)
+        this.name=el.target.innerHTML
       }
     },
-    data () {
+    data :function() {
       return {
-        msg: 'Welcome to Your Vue.js App',
+        state: this.from,
+        name: this.from.list[0].msg,
+        isshow: false
       }
     }
   }
@@ -57,8 +65,13 @@
     border-radius: 0 ;
     font-size: 10px;
     height: 40px;
+    width: 25px;
     line-height: 40px;
     box-shadow: 1px 0px 0px 0px #E4E4E4;
+  }
+  .homepagebtn .button-list{
+    top: 39px;
+    text-align: center;
   }
   button i{
     position: absolute;
@@ -74,7 +87,8 @@
     box-sizing: border-box;
   }
   .button-list{
-    border: 1px solid #E4E4E4;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
     width: 100%;
     box-shadow: 0 1px 2px 0 #E4E4E4;
     border-radius: 4px;
@@ -83,7 +97,7 @@
     top: 35px;
     background-color: #fff;
     z-index: 9999;
-    display: none;
+    /*display: none;*/
   }
   .button-list div{
     height: 36px;
