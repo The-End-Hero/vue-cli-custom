@@ -25,14 +25,14 @@
     <!--</div>-->
 
     <!--个人中心-->
-    <div class="recruit">
-      <div class="recruit-content clearfix">
-        <div class="recruit-content-left-banner">
-          <li><i class="icon iconfont"></i>我的简历</li>
-          <li><i class="icon iconfont"></i>我推荐的</li>
-          <li><i class="icon iconfont"></i>我申请的</li>
-          <li><i class="icon iconfont"></i>我收藏的</li>
-        </div>
+    <!--<div class="recruit">-->
+      <!--<div class="recruit-content clearfix">-->
+        <!--<div class="recruit-content-left-banner">-->
+          <!--<li><i class="icon iconfont"></i>我的简历</li>-->
+          <!--<li><i class="icon iconfont"></i>我推荐的</li>-->
+          <!--<li><i class="icon iconfont"></i>我申请的</li>-->
+          <!--<li><i class="icon iconfont"></i>我收藏的</li>-->
+        <!--</div>-->
         <!--个人中心-我的简历(无简历)-->
         <!--<div class="recruit-content-right-noresume">-->
           <!--<div class="recruit-content-right-noresume-content">-->
@@ -428,92 +428,96 @@
 
 
         <!--个人中心-创建简历-->
-        <div class="my-resume">
-          <div class="my-resume-title">我的简历</div>
-          <div class="my-resume-content clearfix">
-            <div class="my-resume-content-title twoline">基础信息</div>
-            <div class="create-resume-content-content">
-              <span><i>*</i>姓名：</span>
-              <input type="text">
-              <span><i>*</i>性别：</span>
-              <input type="text">
-              <span><i>*</i>出生日期：</span>
-              <input type="text">
-              <span><i>*</i>国籍：</span>
-              <input type="text">
-              <span><i>*</i>手机号：</span>
-              <input type="text">
-              <span><i>*</i>个人邮箱：</span>
-              <input type="text">
-              <span><i>*</i>工作年限：</span>
-              <button v-on:click="showbuttondetail">
-                <i class="icon iconfont"></i>
-                <div class="button-list" ref="buttonList">
-                  <div>硕士</div>
-                  <div>本科</div>
-                  <div>大专</div>
-                  <div>中专</div>
-                </div>
-              </button>
-              <!--<select>-->
-                <!--<option value="volvo">高中</option>-->
-                <!--<option value="saab">学士</option>-->
-                <!--<option value="opel">硕士</option>-->
-                <!--<option value="audi">博士</option>-->
-              <!--</select>-->
-              <span><i>*</i>现居住地：</span>
-              <input type="text">
-              <span><i>*</i>期望工作地：</span>
-              <input type="text">
-              <span><i>*</i>最高学历：</span>
-              <button>
-                <i class="icon iconfont"></i>
-              </button>
-              <span>身份证号：</span>
-              <input type="text">
-            </div>
-          </div>
-          <div class="my-resume-content clearfix">
-            <div class="my-resume-content-title twoline">工作经历</div>
-            <div class="create-resume-content-content">
-              <span>工作单位：</span>
-              <input type="text">
-              <span>职位：</span>
-              <input type="text">
-            </div>
-            <div class="create-resume-timer">
-              <span>工作时间：</span>
-              <input type="text">
-              <span class="link-time">~</span>
-              <input type="text">
-            </div>
-            <div class="create-resume-text">
-              <span>职位描述：</span>
-              <textarea name="" id="" cols="30" rows="10"></textarea>
-            </div>
-            <div class="create-resume-content-line"></div>
-          </div>
-        </div>
-        <div class="my-resume-status">
-          <div class="my-resume-status-per">
-            <div class="my-resume-status-per-title">简历完成度 :<span>10%</span></div>
-            <div class="my-resume-status-per-per">
-              <div></div>
-            </div>
-            <div class="preview_resume"><i class="icon iconfont"></i>预览简历</div>
-          </div>
-          <div class="my-resume-status-class">
-            <div class="my-resume-status-class-chosen">基础信息</div>
-            <div>教育经历</div>
-            <div>工作经历</div>
-            <div>项目经历</div>
-            <div>附件</div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <!--<div class="my-resume">-->
+          <!--<div class="my-resume-title">我的简历</div>-->
+          <!--<div class="my-resume-content clearfix">-->
+            <!--<div class="my-resume-content-title twoline">基础信息</div>-->
+            <!--<div class="create-resume-content-content">-->
+              <!--<span><i>*</i>姓名：</span>-->
+              <!--<input type="text">-->
+              <!--<span><i>*</i>性别：</span>-->
+              <!--<input type="text">-->
+              <!--<span><i>*</i>出生日期：</span>-->
+              <!--<input type="text">-->
+              <!--<span><i>*</i>国籍：</span>-->
+              <!--<input type="text">-->
+              <!--<span><i>*</i>手机号：</span>-->
+              <!--<input type="text">-->
+              <!--<span><i>*</i>个人邮箱：</span>-->
+              <!--<input type="text">-->
+              <!--<span><i>*</i>工作年限：</span>-->
+              <!--&lt;!&ndash;<button v-on:click="showbuttondetail">&ndash;&gt;-->
+                <!--&lt;!&ndash;<i class="icon iconfont"></i>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="button-list" ref="buttonList">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<div>硕士</div>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<div>本科</div>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<div>大专</div>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<div>中专</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</button>&ndash;&gt;-->
+              <!--<button-select :from="workingtime"></button-select>-->
+              <!--&lt;!&ndash;<select>&ndash;&gt;-->
+                <!--&lt;!&ndash;<option value="volvo">高中</option>&ndash;&gt;-->
+                <!--&lt;!&ndash;<option value="saab">学士</option>&ndash;&gt;-->
+                <!--&lt;!&ndash;<option value="opel">硕士</option>&ndash;&gt;-->
+                <!--&lt;!&ndash;<option value="audi">博士</option>&ndash;&gt;-->
+              <!--&lt;!&ndash;</select>&ndash;&gt;-->
+              <!--<span><i>*</i>现居住地：</span>-->
+              <!--<input type="text">-->
+              <!--<span><i>*</i>期望工作地：</span>-->
+              <!--<input type="text">-->
+              <!--<span><i>*</i>最高学历：</span>-->
+              <!--<button-select :from="education"></button-select>-->
+              <!--<span>身份证号：</span>-->
+              <!--<input type="text">-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="my-resume-content clearfix">-->
+            <!--<div class="my-resume-content-title twoline">工作经历</div>-->
+            <!--<div class="create-resume-content-content">-->
+              <!--<span>工作单位：</span>-->
+              <!--<input type="text">-->
+              <!--<span>职位：</span>-->
+              <!--<input type="text">-->
+            <!--</div>-->
+            <!--<div class="create-resume-timer">-->
+              <!--<span>工作时间：</span>-->
+              <!--<input type="text">-->
+              <!--<span class="link-time">~</span>-->
+              <!--<input type="text">-->
+            <!--</div>-->
+            <!--<div class="create-resume-text">-->
+              <!--<span>职位描述：</span>-->
+              <!--<textarea name="" id="" cols="30" rows="10"></textarea>-->
+            <!--</div>-->
+            <!--<div class="create-resume-content-line"></div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-resume-status">-->
+          <!--<div class="my-resume-status-per">-->
+            <!--<div class="my-resume-status-per-title">简历完成度 :<span>10%</span></div>-->
+            <!--<div class="my-resume-status-per-per">-->
+              <!--<div></div>-->
+            <!--</div>-->
+            <!--<div class="preview_resume"><i class="icon iconfont"></i>预览简历</div>-->
+          <!--</div>-->
+          <!--<div class="my-resume-status-class">-->
+            <!--<div class="my-resume-status-class-chosen">基础信息</div>-->
+            <!--<div>教育经历</div>-->
+            <!--<div>工作经历</div>-->
+            <!--<div>项目经历</div>-->
+            <!--<div>附件</div>-->
+          <!--</div>-->
+        <!--</div>-->
 
 
+
+
+      <!--</div>-->
+    <!--</div>-->
+
+
+    <router-view/>
 
     <footer-buttom></footer-buttom>
     <!--<div class="footer">-->
@@ -528,11 +532,14 @@
 <script>
   import HeaderTop from './HeaderTop.vue'
   import FooterButtom from './FooterButtom.vue'
+  import ButtonSelect from './ButtonSelect.vue'
+
   export default {
     name: 'UseLess',
     components:{
       HeaderTop,
-      FooterButtom
+      FooterButtom,
+      ButtonSelect
     },
     methods: {
       showbuttondetail:function () {
@@ -541,7 +548,27 @@
     },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        workingtime:{
+          from:'workingtime',
+          list:[
+            {msg:'1年'},
+            {msg:'2年'},
+            {msg:'3~5年'},
+            {msg:'5~10年'},
+            {msg:'10年以上'},
+          ]
+        },
+        education:{
+          from:'education',
+          list:[
+            {msg:'博士'},
+            {msg:'硕士'},
+            {msg:'本科'},
+            {msg:'大专'},
+            {msg:'中专'},
+          ]
+        }
       }
     }
   }
@@ -799,7 +826,6 @@
   padding: 40px;
 }
 .my-resume-content-title{
-  font-family: .PingFangSC-Medium;
   font-size: 16px;
   line-height: 19px;
   margin-bottom: 30px;

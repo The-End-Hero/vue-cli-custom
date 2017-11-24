@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-on:click="showchange">
     <header-top></header-top>
     <div class="homepage">
       <img src="../pages/index/assets/beijintu01.png"/>
@@ -9,7 +9,7 @@
           <!--<option value="audi">校园招聘</option>-->
           <!--<option value="saab">实习生招聘</option>-->
         <!--</select>-->
-        <button-select :from="homepage"></button-select>
+        <button-select :from="homepage" ref="buttonselect"></button-select>
         <input type="text" placeholder="请输入职位关键词">
         <span>搜索职位</span>
         <div class="hotposition">热门职位：
@@ -48,6 +48,11 @@
             {msg:'实习生招聘'}
           ]
         },
+      }
+    },
+    methods: {
+      showchange(){
+        this.$refs.buttonselect.unshow()
       }
     }
   }

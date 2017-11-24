@@ -9,6 +9,11 @@ import ForgotPassword from '@/components/ForgotPassword'
 import SocialRecruitment from '@/components/SocialRecruitment'
 import RecruitmentDetails from '@/components/RecruitmentDetails'
 import RecruitmentList from '@/components/RecruitmentList'
+import MyResume from '@/components/MyResume'
+import MyRecommend from '@/components/MyRecommend'
+import MyApply from '@/components/MyApply'
+import MyCollection from '@/components/MyCollection'
+
 
 Vue.use(Router)
 
@@ -17,12 +22,29 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
     },
     {
       path: '/UserCenter',
       name: 'UserCenter',
-      component: UserCenter
+      component: UserCenter,
+      children: [
+        {
+          path: '', component: MyResume
+        },
+        {
+          path: 'MyResume', component: MyResume
+        },
+        {
+          path: 'MyRecommend', component: MyRecommend
+        },
+        {
+          path: 'MyApply', component: MyApply
+        },
+        {
+          path: 'MyCollection', component: MyCollection
+        },
+      ]
     },
     {
       path: '/HomePage',

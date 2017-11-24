@@ -47,8 +47,8 @@
                 <span>纽约</span>
                 <span>新西兰</span>
                 <span>法兰西</span>
-                <div v-if="less === false" v-on:click="showmore">更多<i class="icon iconfont"></i></div>
-                <div v-if="less" v-on:click="showless">收起<i class="icon iconfont"></i></div>
+                <div v-if="less === false" v-on:click="showmore">更多&nbsp;&nbsp;<i class="icon iconfont"></i></div>
+                <div v-if="less" v-on:click="showless">收起&nbsp;&nbsp;<i class="icon iconfont lessshow"></i></div>
               </div>
 
             </div>
@@ -191,6 +191,7 @@
     font-size: 14px;
     color: #FFFFFF;
     margin-left: 20px;
+    cursor: pointer;
   }
   .hotpost{
     margin-top: 10px;
@@ -264,7 +265,7 @@
   .bfc{
     height: 20px;
     overflow: hidden;
-    padding-right: 50px;
+    padding-right: 100px;
     position: relative;
   }
   .bfc div{
@@ -275,6 +276,15 @@
     font-size: 14px;
     color: #0091EA;
     cursor: pointer;
+    user-select: none;
+  }
+  .bfc i{
+    display: inline-block;
+    font-size: 14px;
+    transform: rotate(90deg);
+  }
+  .bfc .lessshow{
+    transform: rotate(-90deg);
   }
   .working-place span{
     margin-bottom: 5px;

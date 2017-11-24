@@ -28,10 +28,10 @@
     <div class="header-banner">
       <div class="header-banner-list">
         <router-link to="/HomePage"><li ref="homepage">首页</li></router-link>
-        <li>社会招聘</li>
-        <li>校园招聘</li>
-        <li>实习生招聘</li>
-        <router-link to="/UserCenter"><li ref="usercenter">个人中心</li></router-link>
+        <router-link to="/SocialRecruitment"><li ref="socialrecruitment">社会招聘</li></router-link>
+        <router-link to=""><li>校园招聘</li></router-link>
+        <router-link to=""><li>实习生招聘</li></router-link>
+        <router-link to="/UserCenter/MyResume"><li ref="usercenter">个人中心</li></router-link>
       </div>
     </div>
   </div>
@@ -60,6 +60,8 @@
         this.$refs.usercenter.style.backgroundColor='#0091EA'
       }else if(window.location.href.indexOf('HomePage')>-1){
         this.$refs.homepage.style.backgroundColor='#0091EA'
+      }else if(window.location.href.indexOf('SocialRecruitment')>-1){
+        this.$refs.socialrecruitment.style.backgroundColor='#0091EA'
       }
 
     }

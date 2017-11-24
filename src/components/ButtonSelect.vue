@@ -1,8 +1,8 @@
 <template>
-  <button v-on:click="showbuttondetail" :class="from.from==='homepage'?'homepagebtn':''">{{name}}
+  <button v-on:click.stop="showbuttondetail" :class="from.from==='homepage'?'homepagebtn':''">{{name}}
     <i class="icon iconfont"></i>
     <div class="button-list" ref="buttonList" v-if="isshow">
-      <div v-for="site in from.list" v-on:click="checked">{{site.msg}}</div>
+      <div v-for="site in from.list" v-on:click.stop="checked">{{site.msg}}</div>
       <!--<div>校园招聘</div>-->
       <!--<div>实习生招聘</div>-->
     </div>
@@ -11,31 +11,49 @@
 
 <script>
   export default {
-    props: ['from'],
     name: 'Header',
-    methods: {
-      showbuttondetail:function () {
-        //this.$refs.buttonList.style.display='block'
-        this.isshow = true
-      },
-      checked:function (el) {
-        console.log(this.$refs.buttonList)
-//        this.$refs.buttonList.style.display='none'
-        this.isshow = false
-        console.log(this.$refs.buttonList.style.display)
-        console.log(this.isshow,'isshow')
-        console.log(this.state)
-        console.log(el.target.innerHTML)
-        this.name=el.target.innerHTML
-      }
-    },
-    data :function() {
+    data() {
       return {
         state: this.from,
-        name: this.from.list[0].msg,
+        name: null,
         isshow: false
       }
-    }
+    },
+    props: ['from'],
+    beforeUpdate(){
+      console.log("111111111", this.isshow);
+      console.log(this.name,'data')
+    },
+    created() {
+      if (this.from.from == 'homepage') {
+        this.name = this.from.list[0].msg
+      } else if (this.from.from == 'workingtime') {
+        this.name = '请选择'
+      } else if (this.from.from == 'education') {
+        this.name = '本科'
+      }
+    },
+    methods: {
+      showbuttondetail:function () {
+        console.log(this)
+        console.log(this.$refs.buttonList)
+        console.log(this.$refs)
+        this.isshow = true
+      },
+      checked(el) {
+        console.log(123)
+        console.log(this.$refs.buttonList)
+        this.unshow()
+        this.name=el.target.innerHTML
+      },
+      unshow(){
+        console.log('unshow', this.isshow)
+        this.isshow = false
+        console.log('unshow', this.isshow)
+
+      }
+    },
+
   }
 </script>
 
@@ -44,13 +62,15 @@
   button{
     display: inline-block;
     vertical-align: top;
-    width: 278px;
+    width: 280px;
     height: 36px;
     border: 1px solid #E4E4E4;
     border-radius: 4px;
     margin-top: 20px;
     background-color: #fff;
     position: relative;
+    text-align: left;
+    padding-left: 10px;
   }
   .homepagebtn{
     width: 113px;
@@ -58,20 +78,23 @@
     margin-top:0;
     text-align: left;
     padding-left: 15px;
+    border: none;
   }
   .homepagebtn i{
     background: #fff;
-    border: none;
     border-radius: 0 ;
     font-size: 10px;
     height: 40px;
     width: 25px;
     line-height: 40px;
     box-shadow: 1px 0px 0px 0px #E4E4E4;
+    top: 0;
+    border: none;
   }
   .homepagebtn .button-list{
-    top: 39px;
+    top: 40px;
     text-align: center;
+    border: none;
   }
   button i{
     position: absolute;
@@ -85,6 +108,7 @@
     border: 1px solid #E4E4E4;
     border-radius: 0 4px 4px 0;
     box-sizing: border-box;
+    text-align: center;
   }
   .button-list{
     border-top: 1px solid #E4E4E4;
@@ -104,7 +128,12 @@
     font-size: 14px;
     line-height: 36px;
     color: #666666;
-    box-shadow: 0px -1px 0px 0px #E4E4E4;
+    text-align: center;
+    /*box-shadow:inset 0px 1px 0px 0px #E4E4E4;*/
+    border-bottom: 1px solid #E4E4E4;
+  }
+  .button-list div:nth-last-of-type(1){
+    border-bottom: none;
   }
   .button-list div:hover{
     background: #0091EA;
