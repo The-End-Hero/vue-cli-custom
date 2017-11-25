@@ -959,9 +959,11 @@
     color: #666666;
     line-height: 17px;
     padding: 15px 0;
-    padding-left: 20px;
+    padding-left: 17px;
     user-select: none;
     cursor: pointer;
+    border-left: 3px solid #FFF;
+
   }
   .my-resume-status-class .my-resume-status-class-chosen{
     border-left: 3px solid #0091EA;

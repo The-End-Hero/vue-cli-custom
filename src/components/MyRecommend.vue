@@ -2,10 +2,10 @@
   <div class="recruit">
     <div class="recruit-content clearfix">
       <div class="recruit-content-left-banner">
-        <li><i class="icon iconfont"></i>我的简历</li>
-        <li><i class="icon iconfont"></i>我推荐的</li>
-        <li><i class="icon iconfont"></i>我申请的</li>
-        <li><i class="icon iconfont"></i>我收藏的</li>
+        <router-link to="/UserCenter/MyResume"><li><i class="icon iconfont"></i>我的简历</li></router-link>
+        <router-link to="/UserCenter/MyRecommend"><li><i class="icon iconfont"></i>我推荐的</li></router-link>
+        <router-link to="/UserCenter/MyApply"><li><i class="icon iconfont"></i>我申请的</li></router-link>
+        <router-link to="/UserCenter/MyCollection"><li><i class="icon iconfont"></i>我收藏的</li></router-link>
       </div>
       <!--个人中心-我推荐的-->
       <div class="my-recommend">

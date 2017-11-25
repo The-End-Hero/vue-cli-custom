@@ -1,10 +1,10 @@
 <template>
   <div class="recruit-content clearfix">
     <div class="recruit-content-left-banner">
-      <li><i class="icon iconfont"></i>我的简历</li>
-      <li><i class="icon iconfont"></i>我推荐的</li>
-      <li><i class="icon iconfont"></i>我申请的</li>
-      <li><i class="icon iconfont"></i>我收藏的</li>
+      <router-link to="/UserCenter/MyResume"><li><i class="icon iconfont"></i>我的简历</li></router-link>
+      <router-link to="/UserCenter/MyRecommend"><li><i class="icon iconfont"></i>我推荐的</li></router-link>
+      <router-link to="/UserCenter/MyApply"><li><i class="icon iconfont"></i>我申请的</li></router-link>
+      <router-link to="/UserCenter/MyCollection"><li><i class="icon iconfont"></i>我收藏的</li></router-link>
     </div>
     <!--个人中心-我的简历(无简历)-->
     <div class="recruit-content-right-noresume">
@@ -55,7 +55,7 @@
     padding-top: 10px;
     margin-bottom: 20px;
   }
-  .recruit-content-left-banner>li{
+  .recruit-content-left-banner li{
     line-height: 48px;
     font-size: 14px;
     color: #444444;

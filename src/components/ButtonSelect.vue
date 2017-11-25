@@ -47,9 +47,9 @@
         this.name=el.target.innerHTML
       },
       unshow(){
-        console.log('unshow', this.isshow)
+//        console.log('unshow', this.isshow)
         this.isshow = false
-        console.log('unshow', this.isshow)
+//        console.log('unshow', this.isshow)
 
       }
     },

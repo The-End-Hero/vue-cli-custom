@@ -1,10 +1,10 @@
 <template>
   <div class="recruit-content clearfix">
     <div class="recruit-content-left-banner" ref="leftbanner">
-      <li><i class="icon iconfont"></i>我的简历</li>
-      <li><i class="icon iconfont"></i>我推荐的</li>
-      <li><i class="icon iconfont"></i>我申请的</li>
-      <li><i class="icon iconfont"></i>我收藏的</li>
+      <router-link to="/UserCenter/MyResume"><li><i class="icon iconfont"></i>我的简历</li></router-link>
+      <router-link to="/UserCenter/MyRecommend"><li><i class="icon iconfont"></i>我推荐的</li></router-link>
+      <router-link to="/UserCenter/MyApply"><li><i class="icon iconfont"></i>我申请的</li></router-link>
+      <router-link to="/UserCenter/MyCollection"><li><i class="icon iconfont"></i>我收藏的</li></router-link>
     </div>
     <!--个人中心-我的简历-->
     <div class="my-resume">
@@ -161,11 +161,11 @@
         </div>
       </div>
       <div class="my-resume-status-class">
-        <div class="my-resume-status-class-chosen">基础信息</div>
-        <div>教育经历</div>
-        <div>工作经历</div>
-        <div>项目经历</div>
-        <div>附件</div>
+        <div v-on:click="checklist" class="my-resume-status-class-chosen">基础信息</div>
+        <div v-on:click="checklist">教育经历</div>
+        <div v-on:click="checklist">工作经历</div>
+        <div v-on:click="checklist">项目经历</div>
+        <div v-on:click="checklist">附件</div>
       </div>
     </div>
   </div>
@@ -182,17 +182,38 @@
           previewresume:false,
           createresume:true,
         }
+      },
+      // 右侧边栏点击
+      checklist(el){
+//        console.log(el.target.parentNode.children,'children')
+        const els = el.target.parentNode.children
+        for(let i=0;i<els.length;i++){
+          els[i].className=''
+          if(els[i]===el.target){
+            window.scroll(0,this.listHeight[i])
+            console.log(i)
+            console.log('listheight',this.listHeight)
+          }
+        }
+        el.target.className="my-resume-status-class-chosen"
+
+//        console.log('listheight',this.listHeight)
+
       }
     },
     mounted(){
       const height = this.$parent.$el.offsetHeight-20+'px'
       this.$refs.leftbanner.style.height = height
       console.log(this.$parent.$el.offsetHeight-20)
-
+      const listHeight = document.querySelectorAll('.my-resume-content')
+      for(let i=0;i<listHeight.length;i++){
+        this.listHeight[i] = listHeight[i].offsetTop
+      }
     },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        listHeight:[],
       }
     }
   }
@@ -377,9 +398,10 @@
     color: #666666;
     line-height: 17px;
     padding: 15px 0;
-    padding-left: 20px;
+    padding-left: 17px;
     user-select: none;
     cursor: pointer;
+    border-left: 3px solid #FFF;
   }
   .my-resume-status-class .my-resume-status-class-chosen{
     border-left: 3px solid #0091EA;
