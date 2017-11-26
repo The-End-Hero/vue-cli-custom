@@ -109,5 +109,114 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .recruit-content{
+    width: 1200px;
+    min-height: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .recruit-content-left-banner{
+    box-sizing: border-box;
+    float: left;
+    width: 180px;
+    min-height: 486px;
+    background: #F5F5F5;
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
+  .recruit-content-left-banner li{
+    line-height: 48px;
+    font-size: 14px;
+    color: #444444;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .recruit-content-left-banner i{
+    padding-right: 9px;
+    padding-left: 28px;
+    font-size: 14px;
+  }
+  .my-recommend{
+    float: left;
+    margin-left: 19px;
+    margin-bottom: 20px;
+    width: 960px;
+    min-height: 400px;
+  }
+  .my-recommend-title{
+    font-size: 18px;
+    line-height: 18px;
+    color: #444444;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  .my-recommend-searchbar{
+    height: 36px;
+    /*background: gainsboro;*/
+    font-size: 0;
+    margin-bottom: 20px;
+  }
+  .my-recommend-searchbar input {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 34px;
+    padding: 0;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  .my-recommend-searchbar select{
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 36px;
+    padding: 0;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-left: 10px;
+    position: relative;
+    background: url("../pages/index/assets/logo.png") no-repeat scroll right center transparent;
+    background-size: 36px;
+  }
+  .my-recommend-searchbar span {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    color: #444444;
+    line-height: 36px;
+  }
+  .my-recommend-searchbar .my-recommend-search{
+    background: #0091EA;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 0 16px;
+  }
 
+  .myrecommend-table {
+    border-collapse: collapse; /*相邻边被合并;separate: 边框独立*/
+    border: none;
+    width: 960px;
+  }
+  .myrecommend-table td {
+    border: solid #CCC 1px;
+    height: 38px;
+    text-align: center;
+    width: 20%;
+    font-size: 14px;
+    color: #444444;
+    padding: 0px 12px;
+  }
+
+  .myrecommend-table th{
+    border: solid #CCC 1px;
+    height: 34px;
+    background: #F5F5F5;
+    font-size: 14px;
+    color: #444444;
+  }
 </style>

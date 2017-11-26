@@ -11,7 +11,7 @@
 
       <!--个人中心-我申请的-->
       <div class="my-apply">
-        <div class="my-apply-title">我申请的</div>
+        <div class="my-apply-title">我收藏的</div>
         <div class="my-apply-searchbar">
           <span>职位名称：</span>
           <input type="text">
