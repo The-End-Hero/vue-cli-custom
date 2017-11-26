@@ -230,7 +230,7 @@
     padding-top: 10px;
     margin-bottom: 20px;
   }
-  .recruit-content-left-banner>li{
+  .recruit-content-left-banner li{
     line-height: 48px;
     font-size: 14px;
     color: #444444;
