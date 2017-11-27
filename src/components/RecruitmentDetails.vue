@@ -65,18 +65,68 @@
       <div class="text-title">公司简介</div>
       <div class="text-content">红星美凯龙是中国经营面积最大、商场数目最多、地理覆盖面积最广的家居装饰及家具商场运营商。与此同时，红星美凯龙还致力于追求中国家居业的美学发展。公司于2012年首次在米兰国际家具展亮相，把中国家居设计和家居艺术带向国际舞台。公司还将艺术整合入业务中，在其商场设展，展示世界知名艺术家的作品，以激发客户对生活的艺术热情。</div>
     </div>
+
+
+
+
+    <div class="poprecommend">
+      <div class="poprecommendbg"></div>
+      <div class="poprecommendcontent">
+        <div class="poprecommendtitle">
+          <span>毛遂自荐</span>
+          <i class="icon iconfont"></i>
+        </div>
+        <div class="poprecommendinfo">
+          <span class="popleft" style="margin-bottom: 20px;">应聘职位：</span>
+          <span class="popbfc" style="margin-bottom: 20px;">PHP开发工程师</span>
+          <span class="popleft"><i>*</i>上传简历：</span>
+          <div class="popbfc" style="margin-bottom: 30px;">
+            <div class="popupload">
+              <span class="popuploadbtn">选择文件</span>
+              <span>只能上传 txt,pdf,gif,jpeg,png,rar,zip,doc,docx,xls,xlsx,,ppt,pptx 类型的附件，且耽搁附件须小于10M，大附件请拆分上传</span>
+            </div>
+            <div class="popfile"><span class="popfilename">张亮亮简历.docx</span><span class="delete">删除</span></div>
+          </div>
+          <div class="popform">
+            <div>
+              <span><i>*</i>手机号码：</span>
+              <input type="text">
+              <span><i>*</i>电子邮箱：</span>
+              <input type="text">
+              <span><i>*</i>姓名：</span>
+              <input type="text">
+              <span><i>*</i>性别：</span>
+              <input type="text">
+              <span><i>*</i>毕业院校：</span>
+              <input type="text">
+              <span><i>*</i>最高学历：</span>
+              <button-select :from="educationpop" ref="buttonselect66"></button-select>
+              <span>当前公司：</span>
+              <input type="text">
+              <span>任职时间：</span>
+              <input type="text">
+            </div>
+            <span>备注：</span>
+            <textarea class="remarks" name="" id="" cols="30" rows="10">
+
+            </textarea>
+          </div>
+          <span class="cancel">取消</span><span class="save">保存并推荐</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 //  import HeaderTop from './HeaderTop.vue'
 //  import FooterButtom from './FooterButtom.vue'
+import ButtonSelect from './ButtonSelect.vue'
   export default {
     name: 'UseLess',
-//    components:{
-//      HeaderTop,
-//      FooterButtom
-//    },
+    components:{
+      ButtonSelect
+    },
     beforeRouteUpdate (to, from, next) {
       // react to route changes...
       // don't forget to call next()
@@ -84,7 +134,17 @@
     },
       data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        educationpop: {
+          from:'educationpop',
+          list:[
+            {msg:'1年'},
+            {msg:'2年'},
+            {msg:'3~5年'},
+            {msg:'5~10年'},
+            {msg:'10年以上'},
+          ]
+        },
       }
     }
   }
@@ -92,6 +152,197 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped="scss">
+  .poprecommend{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .poprecommend i{
+    font-size: 14px;
+    color: #E85043;
+  }
+  .poprecommendbg{
+    background: rgba(0,0,0,0.20);
+    width: 100%;
+    height: 100%;
+  }
+.poprecommendcontent{
+  position: fixed;
+  background: #fff;
+  box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.10);
+  left: 50%;
+  top: 50%;
+  margin-left: -500px;
+  margin-top: -306px;
+  width: 1000px;
+  min-height: 577px;
+}
+.poprecommendtitle{
+  height: 44px;
+  background: #F5F5F5;
+  line-height: 44px;
+  padding: 0 20px;
+  font-size: 0;
+}
+  .poprecommendtitle span{
+    font-size: 16px;
+    color: #444444;
+  }
+  .poprecommendtitle .icon{
+    font-size: 16px;
+    color: #444444;
+    float: right;
+    cursor: pointer;
+  }
+.poprecommendinfo{
+  box-sizing: border-box;
+  padding: 30px 20px ;
+  font-size: 0;
+  padding-bottom: 17px;
+}
+.popleft{
+  float: left;
+  font-size: 14px;
+  color: #444444;
+}
+.popbfc{
+  display: block;
+  overflow: hidden;
+  font-size: 14px;
+  color: #444444;
+}
+.popupload{
+  background: rgba(255,255,255,0.05);
+  border: 1px dashed #E4E4E4;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-size: 0;
+  width: 872px;
+}
+.popupload span{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  color: #999999;
+  width: 665px;
+  line-height: 17px;
+}
+.popupload .popuploadbtn{
+  background: #0091EA;
+  border-radius: 4px;
+  width: 90px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+.popfile{
+  color: #666666;
+  line-height: 17px;
+  margin-left: 5px;
+  font-size: 0;
+  margin-top: 18px;
+}
+.popfile span{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+}
+.popfilename{
+  width: 220px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.delete{
+  font-size: 14px;
+  color: #0091EA;
+  cursor: pointer;
+}
+.popform{
+  box-sizing: border-box;
+  background: #F5F5F5;
+  border: 1px solid #E4E4E4;
+  width: 963px;
+  min-height: 304px;
+  padding: 20px;
+  font-size: 0;
+}
+.popform>div{
+  padding-right: 100px;
+}
+.popform span,.popform input{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  color: #000000;
+  line-height: 17px;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+  .popform span{
+    width: 90px;
+  }
+  .popform input{
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    width: 260px;
+    margin-right: 40px;
+    padding:0 10px;
+  }
+.remarks{
+  border: 1px solid #E4E4E4;
+  border-radius: 4px;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  resize: none;
+  width: 830px;
+  height: 80px;
+  padding: 5px 10px;
+  line-height: 17px;
+}
+.cancel,.save{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  color: #444444;
+  height: 36px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 20px;
+}
+  .cancel{
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #444444;
+    line-height: 34px;
+    width: 80px;
+    margin-right: 10px;
+    margin-left: 770px;
+  }
+  .save{
+    background: #0091EA;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 36px;
+    width: 100px;
+  }
+
+
+
+
+
   .details{
     width: 1200px;
     margin: 0 auto;

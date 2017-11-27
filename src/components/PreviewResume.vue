@@ -162,12 +162,18 @@
       </div>
       <div class="my-resume-status-class">
         <div v-on:click="checklist" class="my-resume-status-class-chosen">基础信息</div>
-        <div v-on:click="checklist">教育经历</div>
         <div v-on:click="checklist">工作经历</div>
+        <div v-on:click="checklist">教育经历</div>
         <div v-on:click="checklist">项目经历</div>
         <div v-on:click="checklist">附件</div>
       </div>
     </div>
+
+
+
+
+
+
   </div>
 </template>
 
@@ -221,6 +227,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
   .recruit-content-left-banner{
     box-sizing: border-box;
     float: left;

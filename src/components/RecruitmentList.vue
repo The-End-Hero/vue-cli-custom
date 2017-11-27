@@ -23,7 +23,7 @@
             <div class="working-place">
               <span class="title">工作地点：</span>
               <div class="bfc" ref="bfc">
-                <span>背景</span>
+                <span class="default-select">不限</span>
                 <span>上海</span>
                 <span>旧金山</span>
                 <span>纽约</span>
@@ -54,7 +54,7 @@
             </div>
             <div class="working-experience">
               <span class="title">工作经验：</span>
-              <span>背景</span>
+              <span class="default-select">不限</span>
               <span>上海</span>
               <span>旧金山</span>
               <span>纽约</span>
@@ -63,7 +63,7 @@
             </div>
             <div class="working-education">
               <span class="title">学历要求：</span>
-              <span>背景</span>
+              <span class="default-select">不限</span>
               <span>上海</span>
               <span>旧金山</span>
               <span>纽约</span>
@@ -72,9 +72,9 @@
             </div>
           </div>
           <div class="recruitment-content-table-two">
-            <div class="working-education">
+            <div class="working-education notop">
               <span class="title">排序方式：</span>
-              <span>背景</span>
+              <span class="default-select">不限</span>
               <span>上海</span>
               <span>旧金山</span>
             </div>
@@ -244,6 +244,9 @@
   .working-experience{
     margin-top: 10px;
   }
+  .notop.working-education{
+    margin-top: 0px;
+  }
   /*.working-experience span{*/
   /*display: inline-block;*/
   /*vertical-align: top;*/
@@ -258,6 +261,9 @@
   .working-education{
     margin-top: 10px;
   }
+  /*.working-education:nth-last-child(1){*/
+    /*margin-top: 0;*/
+  /*}*/
   .working-place .title{
     height: 100%;
     float: left;
@@ -318,6 +324,10 @@
     background: #0091EA;
   }
 
+  .working-education .default-select,.working-place .default-select,.working-experience .default-select{
+    color: #fff;
+    background: #0091EA;
+  }
   .recruitment-content-list{
     width: 100%;
     padding-top: 20px;

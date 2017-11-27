@@ -18,19 +18,21 @@
           <span>部门：</span>
           <input type="text">
           <span class="education-select">工作地点：</span>
-          <select>
-            <option value="volvo">高中</option>
-            <option value="saab">学士</option>
-            <option value="opel">硕士</option>
-            <option value="audi">博士</option>
-          </select>
+          <!--<select>-->
+            <!--<option value="volvo">高中</option>-->
+            <!--<option value="saab">学士</option>-->
+            <!--<option value="opel">硕士</option>-->
+            <!--<option value="audi">博士</option>-->
+          <!--</select>-->
+          <button-select :from="jobplace" ref="buttonselect-"></button-select>
           <span class="education-select">职位状态：</span>
-          <select>
-            <option value="volvo">高中</option>
-            <option value="saab">学士</option>
-            <option value="opel">硕士</option>
-            <option value="audi">博士</option>
-          </select>
+          <!--<select>-->
+            <!--<option value="volvo">高中</option>-->
+            <!--<option value="saab">学士</option>-->
+            <!--<option value="opel">硕士</option>-->
+            <!--<option value="audi">博士</option>-->
+          <!--</select>-->
+          <button-select :from="jobstatus" ref="buttonselect-www"></button-select>
           <span class="my-apply-search">搜索</span>
         </div>
         <table class="myapply-table">
@@ -73,8 +75,8 @@
             <td>
               在线
             </td>
-            <td>
-              删除
+            <td class="delete">
+              <i class="icon iconfont"></i>删除
             </td>
           </tr>
           <tr>
@@ -102,8 +104,8 @@
             <td>
               在线
             </td>
-            <td>
-              删除
+            <td class="delete">
+              <i class="icon iconfont"></i>删除
             </td>
           </tr>
           <tr>
@@ -131,12 +133,16 @@
             <td>
               在线
             </td>
-            <td>
-              删除
+            <td class="delete">
+              <i class="icon iconfont"></i>删除
             </td>
           </tr>
           </tbody>
         </table>
+
+
+        <!--分页组件-->
+        <paging-assembly :info="paginginfo"></paging-assembly>
       </div>
 
     </div>
@@ -144,11 +150,42 @@
 </template>
 
 <script>
+  import ButtonSelect from './ButtonSelect.vue'
+  import PagingAssembly from './PagingAssembly.vue'
   export default {
     name: 'HelloWorld',
+    components:{
+      ButtonSelect,
+      PagingAssembly
+    },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        jobstatus: {
+          from:'jobstatus',
+          list:[
+            {msg:'1年'},
+            {msg:'2年'},
+            {msg:'3~5年'},
+            {msg:'5~10年'},
+            {msg:'10年以上'},
+          ]
+        },
+        jobplace: {
+          from:'jobplace',
+          list:[
+            {msg:'1年'},
+            {msg:'2年'},
+            {msg:'3~5年'},
+            {msg:'5~10年'},
+            {msg:'10年以上'},
+          ]
+        },
+        paginginfo:{
+          totaltext:'共9页120条',
+          currentpage:2,
+          totalpage:10
+        }
       }
     }
   }
@@ -156,6 +193,15 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .myapply-table td.delete{
+    font-size: 14px;
+    color: #0091EA;
+    cursor: pointer;
+    user-select: none;
+  }
+  .myapply-table td.delete .icon{
+    margin-right: 6px;
+  }
   .recruit-content{
     width: 1200px;
     min-height: 300px;
@@ -181,10 +227,12 @@
     margin-bottom: 20px;
   }
   .my-apply-searchbar input {
+    box-sizing: border-box;
+    padding-left: 10px;
     display: inline-block;
     vertical-align: top;
     width: 120px;
-    height: 34px;
+    height: 36px;
     padding: 0;
     background: #FFFFFF;
     border: 1px solid #E4E4E4;

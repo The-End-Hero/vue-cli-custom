@@ -1,291 +1,10 @@
 <template>
-  <div class="recruit" v-on:click.stop="showchange">
+  <div class="recruit">
     <no-resume v-if="showrule.noresume"></no-resume>
-    <!--<div class="recruit-content clearfix">-->
-      <!--<div class="recruit-content-left-banner">-->
-        <!--<li><i class="icon iconfont"></i>我的简历</li>-->
-        <!--<li><i class="icon iconfont"></i>我推荐的</li>-->
-        <!--<li><i class="icon iconfont"></i>我申请的</li>-->
-        <!--<li><i class="icon iconfont"></i>我收藏的</li>-->
-      <!--</div>-->
-      <!--&lt;!&ndash;个人中心-我的简历(无简历)&ndash;&gt;-->
-      <!--<div class="recruit-content-right-noresume">-->
-        <!--<div class="recruit-content-right-noresume-content">-->
-          <!--<div class="recruit-content-right-noresume-logo"></div>-->
-          <!--<div class="recruit-content-right-noresume-words">亲，你还没有简历信息</div>-->
-          <!--<div class="recruit-content-right-noresume-button">创建简历</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
 
     <preview-resume v-if="showrule.previewresume"></preview-resume>
-    <!--<div class="recruit-content clearfix">-->
-      <!--<div class="recruit-content-left-banner">-->
-        <!--<li><i class="icon iconfont"></i>我的简历</li>-->
-        <!--<li><i class="icon iconfont"></i>我推荐的</li>-->
-        <!--<li><i class="icon iconfont"></i>我申请的</li>-->
-        <!--<li><i class="icon iconfont"></i>我收藏的</li>-->
-      <!--</div>-->
-      <!--&lt;!&ndash;个人中心-我的简历&ndash;&gt;-->
-      <!--<div class="my-resume">-->
-        <!--<div class="my-resume-title">简历预览</div>-->
-        <!--<div class="my-resume-content clearfix">-->
-          <!--<div class="my-resume-content-title twoline">基础信息</div>-->
-          <!--<div class="my-resume-content-content">-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">姓名</span>-->
-              <!--<span class="my-resume-content-content-detail-two">李晓星</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">性别</span>-->
-              <!--<span class="my-resume-content-content-detail-two">男</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">出生日期</span>-->
-              <!--<span class="my-resume-content-content-detail-two">1983-08-23</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">国籍：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">中国</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">手机号：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">18688736745</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">个人邮箱：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">47897220@qq.com</span>-->
-            <!--</div>-->
-          <!--</div>-->
-
-          <!--<div class="my-resume-content-content">-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">工作年限：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">4年</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">现居住地：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">上海</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">期望工作地：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">上海</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">最高学历：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">本科</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">身份证号：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">6789271983082368974</span>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="my-resume-content clearfix">-->
-          <!--<div class="my-resume-content-title">工作经历</div>-->
-          <!--<div class="my-resume-content-content-oneline">-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">姓名</span>-->
-              <!--<span class="my-resume-content-content-detail-two">李晓星</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">性别</span>-->
-              <!--<span class="my-resume-content-content-detail-two">男</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">出生日期</span>-->
-              <!--<span class="my-resume-content-content-detail-two">1983-08-23</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">国籍：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">中国</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">手机号：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">18688736745</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">个人邮箱：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">47897220@qq.com</span>-->
-            <!--</div>-->
-          <!--</div>-->
-          <!--<div class="my-resume-content-line"></div>-->
-          <!--<div class="my-resume-content-content-oneline">-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">姓名</span>-->
-              <!--<span class="my-resume-content-content-detail-two">李晓星</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">性别</span>-->
-              <!--<span class="my-resume-content-content-detail-two">男</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">出生日期</span>-->
-              <!--<span class="my-resume-content-content-detail-two">1983-08-23</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">国籍：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">中国</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">手机号：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">18688736745</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">个人邮箱：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">47897220@qq.com</span>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="my-resume-content clearfix">-->
-          <!--<div class="my-resume-content-title">工作经历</div>-->
-          <!--<div class="my-resume-content-content-oneline">-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">姓名</span>-->
-              <!--<span class="my-resume-content-content-detail-two">李晓星</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">性别</span>-->
-              <!--<span class="my-resume-content-content-detail-two">男</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">出生日期</span>-->
-              <!--<span class="my-resume-content-content-detail-two">1983-08-23</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">国籍：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">中国</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">手机号：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">18688736745</span>-->
-            <!--</div>-->
-            <!--<div class="my-resume-content-content-detail">-->
-              <!--<span class="my-resume-content-content-detail-one">个人邮箱：</span>-->
-              <!--<span class="my-resume-content-content-detail-two">47897220@qq.com</span>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="my-resume-confirm">-->
-          <!--<div class="my-resume-confirm-content">-->
-            <!--<div class="my-resume-confirm-content-one">返回修改</div>-->
-            <!--<div class="my-resume-confirm-content-two">搜职位</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="my-resume-status">-->
-        <!--<div class="my-resume-status-per">-->
-          <!--<div class="my-resume-status-per-title">简历完成度 :<span>10%</span></div>-->
-          <!--<div class="my-resume-status-per-per">-->
-            <!--<div></div>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="my-resume-status-class">-->
-          <!--<div class="my-resume-status-class-chosen">基础信息</div>-->
-          <!--<div>教育经历</div>-->
-          <!--<div>工作经历</div>-->
-          <!--<div>项目经历</div>-->
-          <!--<div>附件</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
 
     <create-resume v-if="showrule.createresume" ref="createresume"></create-resume>
-    <!--<div class="recruit-content clearfix">-->
-      <!--<div class="recruit-content-left-banner">-->
-        <!--<li><i class="icon iconfont"></i>我的简历</li>-->
-        <!--<li><i class="icon iconfont"></i>我推荐的</li>-->
-        <!--<li><i class="icon iconfont"></i>我申请的</li>-->
-        <!--<li><i class="icon iconfont"></i>我收藏的</li>-->
-      <!--</div>-->
-      <!--&lt;!&ndash;个人中心-创建简历&ndash;&gt;-->
-      <!--<div class="my-resume">-->
-        <!--<div class="my-resume-title">我的简历</div>-->
-        <!--<div class="my-resume-content clearfix">-->
-          <!--<div class="my-resume-content-title twoline">基础信息</div>-->
-          <!--<div class="create-resume-content-content">-->
-            <!--<span><i>*</i>姓名：</span>-->
-            <!--<input type="text">-->
-            <!--<span><i>*</i>性别：</span>-->
-            <!--<input type="text">-->
-            <!--<span><i>*</i>出生日期：</span>-->
-            <!--<input type="text">-->
-            <!--<span><i>*</i>国籍：</span>-->
-            <!--<input type="text">-->
-            <!--<span><i>*</i>手机号：</span>-->
-            <!--<input type="text">-->
-            <!--<span><i>*</i>个人邮箱：</span>-->
-            <!--<input type="text">-->
-            <!--<span><i>*</i>工作年限：</span>-->
-            <!--&lt;!&ndash;<button v-on:click="showbuttondetail">&ndash;&gt;-->
-            <!--&lt;!&ndash;<i class="icon iconfont"></i>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="button-list" ref="buttonList">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div>硕士</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div>本科</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div>大专</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div>中专</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;</button>&ndash;&gt;-->
-            <!--<button-select :from="workingtime"></button-select>-->
-            <!--&lt;!&ndash;<select>&ndash;&gt;-->
-            <!--&lt;!&ndash;<option value="volvo">高中</option>&ndash;&gt;-->
-            <!--&lt;!&ndash;<option value="saab">学士</option>&ndash;&gt;-->
-            <!--&lt;!&ndash;<option value="opel">硕士</option>&ndash;&gt;-->
-            <!--&lt;!&ndash;<option value="audi">博士</option>&ndash;&gt;-->
-            <!--&lt;!&ndash;</select>&ndash;&gt;-->
-            <!--<span><i>*</i>现居住地：</span>-->
-            <!--<input type="text">-->
-            <!--<span><i>*</i>期望工作地：</span>-->
-            <!--<input type="text">-->
-            <!--<span><i>*</i>最高学历：</span>-->
-            <!--<button-select :from="education"></button-select>-->
-            <!--<span>身份证号：</span>-->
-            <!--<input type="text">-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="my-resume-content clearfix">-->
-          <!--<div class="my-resume-content-title twoline">工作经历</div>-->
-          <!--<div class="create-resume-content-content">-->
-            <!--<span>工作单位：</span>-->
-            <!--<input type="text">-->
-            <!--<span>职位：</span>-->
-            <!--<input type="text">-->
-          <!--</div>-->
-          <!--<div class="create-resume-timer">-->
-            <!--<span>工作时间：</span>-->
-            <!--<input type="text">-->
-            <!--<span class="link-time">~</span>-->
-            <!--<input type="text">-->
-          <!--</div>-->
-          <!--<div class="create-resume-text">-->
-            <!--<span>职位描述：</span>-->
-            <!--<textarea name="" id="" cols="30" rows="10"></textarea>-->
-          <!--</div>-->
-          <!--<div class="create-resume-content-line"></div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="my-resume-status">-->
-        <!--<div class="my-resume-status-per">-->
-          <!--<div class="my-resume-status-per-title">简历完成度 :<span>10%</span></div>-->
-          <!--<div class="my-resume-status-per-per">-->
-            <!--<div></div>-->
-          <!--</div>-->
-          <!--<div class="preview_resume"><i class="icon iconfont"></i>预览简历</div>-->
-        <!--</div>-->
-        <!--<div class="my-resume-status-class">-->
-          <!--<div class="my-resume-status-class-chosen">基础信息</div>-->
-          <!--<div>教育经历</div>-->
-          <!--<div>工作经历</div>-->
-          <!--<div>项目经历</div>-->
-          <!--<div>附件</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
-
-
   </div>
 </template>
 
@@ -311,28 +30,28 @@
       showbuttondetail:function () {
         this.$refs.buttonList.style.display='block'
       },
-      showchange(){
-        if(this.$refs.createresume){
-          console.log(this.$refs.createresume.$refs)
-          const dd= this.$refs.createresume.$refs
-          const keys = []
-          for (var p1 in dd) {
-            console.log(p1)
-            if (dd.hasOwnProperty(p1))
-              keys.push(p1);
-          }
-          for(var i=0;i<keys.length;i++){
-            if(keys[i].indexOf('buttonselect')>-1){
-              console.log(keys[i])
-              this.$refs.createresume.$refs[keys[i]].unshow()
-            }
-          }
-          console.log(keys)
-          this.$refs.createresume.$refs.buttonselect.unshow()
-          console.log(this.$refs.createresume.$refs.buttonselect.unshow)
-
-        }
-      },
+//      showchange(){
+//        if(this.$refs.createresume){
+//          console.log(this.$refs.createresume.$refs)
+//          const dd= this.$refs.createresume.$refs
+//          const keys = []
+//          for (var p1 in dd) {
+//            console.log(p1)
+//            if (dd.hasOwnProperty(p1))
+//              keys.push(p1);
+//          }
+//          for(var i=0;i<keys.length;i++){
+//            if(keys[i].indexOf('buttonselect')>-1){
+//              console.log(keys[i])
+//              this.$refs.createresume.$refs[keys[i]].unshow()
+//            }
+//          }
+//          console.log(keys)
+//          this.$refs.createresume.$refs.buttonselect.unshow()
+//          console.log(this.$refs.createresume.$refs.buttonselect.unshow)
+//
+//        }
+//      },
     },
     data () {
       return {

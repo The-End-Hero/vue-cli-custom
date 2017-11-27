@@ -108,6 +108,8 @@
   line-height: 40px;
   text-align: center;
   border-radius: 0px 4px 4px 0px;
+  cursor: pointer;
+  user-select: none;
 }
   .hotposition{
     font-size: 14px;

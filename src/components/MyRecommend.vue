@@ -16,12 +16,7 @@
           <span>应聘职位 ：</span>
           <input type="text">
           <span class="education-select">学历 ：</span>
-          <select>
-            <option value="volvo">高中</option>
-            <option value="saab">学士</option>
-            <option value="opel">硕士</option>
-            <option value="audi">博士</option>
-          </select>
+          <button-select :from="educationrec" ref="buttonselect-b1"></button-select>
           <span class="my-recommend-search">搜索</span>
         </div>
         <table class="myrecommend-table">
@@ -42,7 +37,7 @@
             <td>
               营销经理
             </td>
-            <td>
+            <td class="showdetail">
               查看
             </td>
             <td>
@@ -59,7 +54,7 @@
             <td>
               营销经理
             </td>
-            <td>
+            <td class="showdetail">
               查看
             </td>
             <td>
@@ -76,7 +71,7 @@
             <td>
               营销经理
             </td>
-            <td>
+            <td class="showdetail">
               查看
             </td>
             <td>
@@ -97,11 +92,26 @@
 </template>
 
 <script>
+  import ButtonSelect from './ButtonSelect.vue'
+
   export default {
     name: 'HelloWorld',
+    components:{
+      ButtonSelect,
+    },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        educationrec: {
+          from:'educationrec',
+          list:[
+            {msg:'1年'},
+            {msg:'2年'},
+            {msg:'3~5年'},
+            {msg:'5~10年'},
+            {msg:'10年以上111'},
+          ]
+        },
       }
     }
   }
@@ -109,6 +119,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .myrecommend-table .showdetail{
+    color: #0091EA;
+  }
   .recruit-content{
     width: 1200px;
     min-height: 300px;

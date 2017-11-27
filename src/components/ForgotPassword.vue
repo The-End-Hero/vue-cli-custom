@@ -39,6 +39,10 @@
           <input type="password" placeholder="设置新密码">
           <input type="password" placeholder="确认密码">
           <div class="signin-button">确定</div>
+          <div class="popconfirm">
+            <i class="icon iconfont"></i>
+            修改成功!
+          </div>
         </div>
         <!--<div class="signin-sur-middle"></div>-->
         <!--<div class="signin-sur-right">-->
@@ -219,6 +223,35 @@
     height: 34px;
     width: 100%;
     margin-bottom: 40px;
+    position: relative;
+  }
+  .popconfirm{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -48px;
+    margin-left: -65px;
+    background: rgba(0,0,0,0.80);
+    border-radius: 4px;
+    width: 130px;
+    height: 96px;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 17px;
+  }
+  .popconfirm .icon{
+    display: block;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 21px;
+    margin-bottom: 6px;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
   }
   .forgot-password-status > div{
     display: inline-block;

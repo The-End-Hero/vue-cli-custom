@@ -1,5 +1,5 @@
 <template>
-  <button v-on:click.stop="showbuttondetail" :class="from.from==='homepage'?'homepagebtn':''">{{name}}
+  <button v-on:click.stop="showbuttondetail" :class="classname">{{name}}
     <i class="icon iconfont"></i>
     <div class="button-list" ref="buttonList" v-if="isshow">
       <div v-for="site in from.list" v-on:click.stop="checked">{{site.msg}}</div>
@@ -16,7 +16,8 @@
       return {
         state: this.from,
         name: null,
-        isshow: false
+        isshow: false,
+        classname: ''
       }
     },
     props: ['from'],
@@ -27,10 +28,20 @@
     created() {
       if (this.from.from == 'homepage') {
         this.name = this.from.list[0].msg
+        this.classname = 'homepagebtn'
       } else if (this.from.from == 'workingtime') {
         this.name = '请选择'
       } else if (this.from.from == 'education') {
         this.name = '本科'
+      } else if(this.from.from == 'jobstatus' || this.from.from == 'jobplace'){
+        this.name = '不限'
+        this.classname = 'jobbtn'
+      } else if(this.from.from == 'educationrec' ){
+        this.name = '不限'
+        this.classname = 'educationrec'
+      } else if(this.from.from == 'educationpop'){
+        this.name = '不限'
+        this.classname = 'educationpop'
       }
     },
     methods: {
@@ -72,6 +83,22 @@
     text-align: left;
     padding-left: 10px;
   }
+  .educationpop{
+    width: 260px;
+    margin-top: 0;
+  }
+  .educationrec{
+    width: 200px;
+    margin-top:0;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  .jobbtn{
+    width: 120px;
+    margin-top:0;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
   .homepagebtn{
     width: 113px;
     border-radius:  4px 0 0 4px;
@@ -109,6 +136,7 @@
     border-radius: 0 4px 4px 0;
     box-sizing: border-box;
     text-align: center;
+    font-size: 12px;
   }
   .button-list{
     border-top: 1px solid #E4E4E4;

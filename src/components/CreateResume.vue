@@ -1,5 +1,20 @@
 <template>
   <div class="recruit-content clearfix">
+    <div class="popshow" v-if="popshow">
+      <div class="popbg"></div>
+      <div class="popcontent">
+        <div class="poptitle">亲，若有简历请先上传简历：</div>
+        <div class="popupload">
+          <span class="popuploadbtn">上传</span>
+          <!--<input type="file">上传</input>-->
+          <span>支持扩展名：.doc .docx .pdf .jpg，最大支持5M</span>
+        </div>
+        <div class="popuploadjump">
+          <span class="popuploadjumpbtn">继续</span>
+          <span v-on:click="hidepop">没有简历，直接跳过&nbsp;&nbsp;&nbsp;>> </span>
+        </div>
+      </div>
+    </div>
     <div class="recruit-content-left-banner" ref="leftbanner">
       <router-link to="/UserCenter/MyResume"><li><i class="icon iconfont"></i>我的简历</li></router-link>
       <router-link to="/UserCenter/MyRecommend"><li><i class="icon iconfont"></i>我推荐的</li></router-link>
@@ -15,7 +30,9 @@
           <span><i>*</i>姓名：</span>
           <input type="text">
           <span><i>*</i>性别：</span>
-          <input type="text">
+          <span class="icon iconfont icon-icon_danxuan2" v-on:click="changesex">男</span>
+          <span class="icon iconfont icon-icon_danxuan1" v-on:click="changesex">女</span>
+          <!--<input type="text">-->
           <span><i>*</i>出生日期：</span>
           <input type="text">
           <span><i>*</i>国籍：</span>
@@ -146,8 +163,8 @@
       </div>
       <div class="my-resume-status-class" ref="statuslist">
         <div v-on:click="checklist" class="my-resume-status-class-chosen">基础信息</div>
-        <div v-on:click="checklist">教育经历</div>
         <div v-on:click="checklist">工作经历</div>
+        <div v-on:click="checklist">教育经历</div>
         <div v-on:click="checklist">项目经历</div>
         <div v-on:click="checklist">附件</div>
       </div>
@@ -164,6 +181,17 @@
       ButtonSelect,
     },
     methods:{
+      changesex(e){
+        console.log(e)
+        console.log( e.target.innerHTML)
+        if( e.target.innerHTML){
+
+        }
+
+      },
+      hidepop(){
+        this.popshow = false
+      },
       changeshow(){
 //        console.log(this.$parent)
         this.$parent.showrule={
@@ -200,6 +228,7 @@
     },
     data () {
       return {
+        popshow:true,
         workingtime:{
           from:'workingtime',
           list:[
@@ -229,6 +258,94 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .recruit-content{
+    /*position: relative;*/
+  }
+  .popshow{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+  }
+  .popbg{
+    background: rgba(0,0,0,0.20);
+    height: 100%;
+    width: 100%;
+  }
+  .popcontent{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -115px;
+    margin-left: -240px;
+    width: 480px;
+    height: 230px;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+  .poptitle{
+    font-size: 18px;
+    color: #444444;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+  .popupload{
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.05);
+    border: 1px dashed #E4E4E4;
+    border-radius: 4px;
+    font-size: 0;
+    padding: 12px 15px;
+  }
+  .popupload span{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    width: 288px;
+    font-size: 14px;
+    color: #999999;
+    line-height: 17px;
+  }
+
+  .popupload .popuploadbtn{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    background: #0091EA;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #FFFFFF;
+    width: 90px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  .popuploadjump{
+    margin-top: 30px;
+    font-size: 0;
+
+  }
+  .popuploadjump span{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    color: #0091EA;
+    line-height: 40px;
+  }
+  .popuploadjump .popuploadjumpbtn{
+    background: #0091EA;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 120px;
+    height: 40px;
+    margin-right: 115px;
+    text-align: center;
+  }
   .resume-up.create-resume-content-content{
     width: 100%;
   }
@@ -505,7 +622,21 @@
   .create-resume-content-content i{
     font-size: 14px;
     color: #E85043;
-
+  }
+  .create-resume-content-content .icon{
+    background: #FFFFFF;
+    /*color: #0091EA;*/
+    color: #666;
+    font-size: 14px;
+    transition: all 0.3s;
+    margin-right: 10px;
+  }
+  .create-resume-content-content .icon:before{
+    font-size: 28px;
+    margin-right: 10px;
+  }
+  .create-resume-content-content .nochose{
+    color: #E4E4E4;
   }
   .create-resume-content-content span{
     display: inline-block;
