@@ -308,6 +308,7 @@ import ButtonSelect from './ButtonSelect.vue'
   height: 80px;
   padding: 5px 10px;
   line-height: 17px;
+  overflow-x: hidden;
 }
 .cancel,.save{
   display: inline-block;
