@@ -16,8 +16,8 @@
       </div>
       <div class="time">2017-11-16  09:25发布</div>
       <div class="recommend">
-        <span>推荐朋友</span>
-        <span class="green-me">毛遂自荐</span>
+        <span @click="recothers">推荐朋友</span>
+        <span class="green-me" @click="recmyself">毛遂自荐</span>
       </div>
       <div class="collection">
         <span><i class="icon iconfont"></i>收藏</span>
@@ -69,12 +69,12 @@
 
 
 
-    <div class="poprecommend">
+    <div class="poprecommend" v-if="popshow">
       <div class="poprecommendbg"></div>
       <div class="poprecommendcontent">
         <div class="poprecommendtitle">
-          <span>毛遂自荐</span>
-          <i class="icon iconfont"></i>
+          <span>{{poptitle}}</span>
+          <i class="icon iconfont" @click="unshow"></i>
         </div>
         <div class="poprecommendinfo">
           <span class="popleft" style="margin-bottom: 20px;">应聘职位：</span>
@@ -96,7 +96,10 @@
               <span><i>*</i>姓名：</span>
               <input type="text">
               <span><i>*</i>性别：</span>
-              <input type="text">
+              <!--<input type="text">-->
+
+              <span :class="sex==='male'?'icon iconfont icon-icon_danxuan2':'icon iconfont icon-icon_danxuan1'" v-on:click="changesex">男</span>
+              <span :class="sex==='male'?'icon iconfont icon-icon_danxuan1':'icon iconfont icon-icon_danxuan2'" style="margin-right: 120px;" v-on:click="changesex">女</span>
               <span><i>*</i>毕业院校：</span>
               <input type="text">
               <span><i>*</i>最高学历：</span>
@@ -111,7 +114,7 @@
 
             </textarea>
           </div>
-          <span class="cancel">取消</span><span class="save">保存并推荐</span>
+          <span class="cancel" @click="unshow">取消</span><span class="save">保存并推荐</span>
         </div>
       </div>
     </div>
@@ -122,36 +125,77 @@
 //  import HeaderTop from './HeaderTop.vue'
 //  import FooterButtom from './FooterButtom.vue'
 import ButtonSelect from './ButtonSelect.vue'
-  export default {
-    name: 'UseLess',
-    components:{
-      ButtonSelect
-    },
-    beforeRouteUpdate (to, from, next) {
-      // react to route changes...
-      // don't forget to call next()
-      console.log(this.$route.params.id)
-    },
-      data () {
-      return {
-        msg: 'Welcome to Your Vue.js App',
-        educationpop: {
-          from:'educationpop',
-          list:[
-            {msg:'1年'},
-            {msg:'2年'},
-            {msg:'3~5年'},
-            {msg:'5~10年'},
-            {msg:'10年以上'},
-          ]
-        },
+
+export default {
+  name: 'UseLess',
+  components: {
+    ButtonSelect
+  },
+  methods: {
+    changesex(e) {
+      console.log(e)
+      console.log(e.target.innerHTML)
+      if (e.target.innerHTML.indexOf('男') > -1) {
+        this.sex = 'male'
+      } else {
+        this.sex = 'female'
       }
+    },
+    recmyself(){
+      this.poptitle='毛遂自荐'
+      this.popshow=true
+    },
+    recothers(){
+      this.poptitle='推荐朋友'
+      this.popshow=true
+    },
+    unshow(){
+      this.popshow=false
+
+    }
+  },
+  beforeRouteUpdate(to, from, next) {
+    // react to route changes...
+    // don't forget to call next()
+    console.log(this.$route.params.id)
+  },
+  data() {
+    return {
+      poptitle: '毛遂自荐',
+      popshow:false,
+      sex: 'male',
+      educationpop: {
+        from: 'educationpop',
+        list: [
+          {msg: '1年'},
+          {msg: '2年'},
+          {msg: '3~5年'},
+          {msg: '5~10年'},
+          {msg: '10年以上'},
+        ]
+      },
     }
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped="scss">
+  .popform .icon{
+    /*background: #FFFFFF;*/
+    /*color: #0091EA;*/
+    color: #666;
+    font-size: 14px;
+    transition: all 0.3s;
+    margin-right: 10px;
+  }
+  .popform .icon-icon_danxuan2:before{
+    color: #0091EA;
+  }
+  .popform .icon:before{
+    font-size: 28px;
+    margin-right: 10px;
+  }
   .poprecommend{
     position: fixed;
     left: 0;
@@ -319,6 +363,7 @@ import ButtonSelect from './ButtonSelect.vue'
   box-sizing: border-box;
   text-align: center;
   margin-top: 20px;
+  cursor: pointer;
 }
   .cancel{
     background: #FFFFFF;
