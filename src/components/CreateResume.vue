@@ -30,8 +30,8 @@
           <span><i>*</i>姓名：</span>
           <input type="text">
           <span><i>*</i>性别：</span>
-          <span class="icon iconfont icon-icon_danxuan2" v-on:click="changesex">男</span>
-          <span class="icon iconfont icon-icon_danxuan1" v-on:click="changesex">女</span>
+          <span :class="sex==='male'?'icon iconfont icon-icon_danxuan2':'icon iconfont icon-icon_danxuan1'" v-on:click="changesex">男</span>
+          <span :class="sex==='male'?'icon iconfont icon-icon_danxuan1':'icon iconfont icon-icon_danxuan2'" v-on:click="changesex">女</span>
           <!--<input type="text">-->
           <span><i>*</i>出生日期：</span>
           <input type="text">
@@ -184,10 +184,11 @@
       changesex(e){
         console.log(e)
         console.log( e.target.innerHTML)
-        if( e.target.innerHTML){
-
+        if(e.target.innerHTML.indexOf('男')>-1){
+          this.sex = 'male'
+        }else {
+          this.sex = 'female'
         }
-
       },
       hidepop(){
         this.popshow = false
@@ -228,6 +229,7 @@
     },
     data () {
       return {
+        sex:'male' ,
         popshow:true,
         workingtime:{
           from:'workingtime',
@@ -630,6 +632,9 @@
     font-size: 14px;
     transition: all 0.3s;
     margin-right: 10px;
+  }
+  .create-resume-content-content .icon-icon_danxuan2:before{
+    color: #0091EA;
   }
   .create-resume-content-content .icon:before{
     font-size: 28px;
