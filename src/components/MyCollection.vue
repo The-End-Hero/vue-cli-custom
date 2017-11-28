@@ -184,7 +184,8 @@
         paginginfo:{
           totaltext:'共9页120条',
           currentpage:2,
-          totalpage:10
+          startpage:1,
+          totalpage:12
         }
       }
     }

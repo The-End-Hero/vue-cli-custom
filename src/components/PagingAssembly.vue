@@ -27,11 +27,11 @@
       <!--少于10页-->
       <div class="pagenum">
         <span class="icon iconfont"></span>
-        <span class="noellipsis">1</span>
-        <span class="noellipsis">1</span>
-        <span class="noellipsis">1</span>
-        <span class="noellipsis">1</span>
-        <span class="noellipsis">1</span>
+        <!--<span class="noellipsis">1</span>-->
+        <!--<span class="noellipsis">1</span>-->
+        <!--<span class="noellipsis">1</span>-->
+        <!--<span class="noellipsis">1</span>-->
+        <span v-for="item in stateinfo.renderlist" class="noellipsis">{{item}}</span>
         <span class="icon iconfont"></span>
       </div>
 
@@ -44,12 +44,53 @@
     name: 'HelloWorld',
     props:['info'],
     mounted(){
-      console.log(this.stateinfo)
+      console.log(this.stateinfo,'stateinfo pageassembly')
+      console.log()
+//      const currentpage = this.info.currentpage
+//      const startpage = this.info.startpage
+//      const totalpage = this.info.totalpage
+
+// 总页数<=11 无任何省略
+// 总页数>11  当前页<7  无前省略，有后省略
+// 总页数>11  当前页>=7  有前省略  --总页数-(当前+4)>1 有后省略
+//                               |-总页数-(当前+4)<=1 无后省略
+      if(this.stateinfo.totalpage>11){
+        const dis = this.stateinfo.totalpage - this.stateinfo.currentpage
+        console.log(dis,'dis')
+        if(this.stateinfo.currentpage>6){
+
+
+        }else if(this.stateinfo.currentpage<=6){
+          const arr = [1,2,3,4,5,6,7,8,9]
+          let data = []
+          const last = arr[arr.length-1]
+          console.log(last)
+
+        }
+
+        if(this.stateinfo.totalpage-(this.stateinfo.currentpage+4)>1){
+
+        }
+      }else {
+        const arr = []
+        for(var i=1;i<=this.stateinfo.totalpage;i++){
+          arr.push(i)
+        }
+        console.log(arr,'arr')
+        this.stateinfo.renderlist=arr
+      }
     },
     data() {
       return {
         msg: 'Welcome to Your Vue.js App',
-        stateinfo:this.info,
+//        stateinfo:this.info,
+//        stateinfo: [1,2,3,4,5,6,7,8,9,10]
+        stateinfo: {
+          renderlist:[1,2,3,4,5,6,7,8,9,10,11],
+          currentpage : this.info.currentpage,
+          startpage : this.info.startpage,
+          totalpage : this.info.totalpage
+        }
 
       }
     }
