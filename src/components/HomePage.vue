@@ -1,6 +1,8 @@
 <template>
   <div v-on:click="showchange">
     <header-top></header-top>
+    <date-select></date-select>
+
     <div class="homepage">
       <img src="../pages/index/assets/beijintu01.png"/>
       <div class="homepage-searchbar">
@@ -30,12 +32,14 @@
   import HeaderTop from './HeaderTop.vue'
   import FooterButtom from './FooterButtom.vue'
   import ButtonSelect from './ButtonSelect.vue'
+  import DateSelect from './DateSelect.vue'
   export default {
     name: 'UseLess',
     components:{
       HeaderTop,
       FooterButtom,
-      ButtonSelect
+      ButtonSelect,
+      DateSelect
     },
     data () {
       return {

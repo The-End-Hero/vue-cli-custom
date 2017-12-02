@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "element-ui": "^1.4.12",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "vue": "^2.5.2",
