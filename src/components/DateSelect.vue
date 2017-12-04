@@ -1,13 +1,7 @@
 <template>
   <button class="dateselect-wxp">{{name}}
     <div class="dateselect-title" @click="checktype">{{title}}</div>
-    <!--<i class="icon iconfont" v-if="isdown"></i>-->
     <i class="icon iconfont rili" @click="checktype"></i>
-    <!--<div class="button-list" ref="buttonList" v-if="isshow">-->
-    <!--<div v-for="site in from.list" v-on:click.stop="checked">{{site.msg}}</div>-->
-    <!--&lt;!&ndash;<div>校园招聘</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div>实习生招聘</div>&ndash;&gt;-->
-    <!--</div>-->
     <div class="dateinset" v-if="isdown" >
       <div class="title">
         <span @click="change(2)">去年</span>
@@ -27,7 +21,38 @@
           <span>日</span>
         </div>
         <div class="dateinset-table-day">
-          <span @click="checkday" v-for="item in day" :style="item.source=='this'?'color: #666666;':item.source=='now'?'background: #0091EA;color:#FFFFFF;':''" :class="item.source=='this'?'cancheck':''">{{item.day}}</span>
+          <span @click="checkday" v-for="item in day" :style="item.source=='this'?'color: #666666;':item.source=='now'?'background: #0091EA;color:#FFFFFF;':'cursor:not-allowed;'" :class="item.source=='this'?'cancheck':''">{{item.day}}</span>
+        </div>
+      </div>
+
+
+
+      <!--月份选择-->
+      <div class="title">
+        <span @click="change(2)">去年</span>
+        <span @click="change(0)"><i class="icon iconfont" style="transform: rotate(90deg); color:#666666;"></i></span>
+        <span><span>{{nowtime.year}}年</span>&nbsp;&nbsp;&nbsp;<span>{{nowtime.month}}月</span></span>
+        <span @click="change(1)"><i class="icon iconfont"></i></span>
+        <span @click="change(3)">明年</span>
+      </div>
+      <div class="dateinset-table">
+        <div class="dateinset-table-day">
+          <span v-for="item in month" @click="checkmonth(item.month)" :style="nowtime.month==item.month?'background:#0091EA; color:#FFFFFF;':''">{{item.name}}</span>
+        </div>
+      </div>
+
+
+
+      <!--年份选择-->
+      <div class="title">
+        <span @click="changeoyear(0)">上个xx年</span>
+        <span><span>{{nowtime.year}}年</span>&nbsp;&nbsp;&nbsp;<span>{{nowtime.month}}月</span></span>
+        <span @click="changeoyear(1)">下个xx年</span>
+      </div>
+      <div class="dateinset-table">
+        <div class="dateinset-table-day">
+          <span v-for="item in year" @click="checkyear(item.year)" :style="nowtime.year==item.year?'background:#0091EA; color:#FFFFFF;':''">{{item.year}}</span>
+
         </div>
       </div>
     </div>
@@ -51,11 +76,39 @@
         day: [
           {day: 123,source : 'this'},
         ],
+        month:[
+          {name:'1月', month:1},
+          {name:'2月', month:2},
+          {name:'3月', month:3},
+          {name:'4月', month:4},
+          {name:'5月', month:5},
+          {name:'6月', month:6},
+          {name:'7月', month:7},
+          {name:'8月', month:8},
+          {name:'9月', month:9},
+          {name:'10月', month:10},
+          {name:'11月', month:11},
+          {name:'12月', month:12},
+        ],
+        year:[
+          {year:2011}
+        ],
+        originyear:2011
       }
     },
     props: ['from'],
     beforeUpdate() {
       console.log('this.isdown', this.isdown)
+    },
+    watch:{
+      nowtime : {
+        handler(curVal,oldVal){
+          console.log(curVal,oldVal)
+          this.title = this.nowtime.year + '年' + this.nowtime.month + '月' + this.nowtime.day + '日'
+          this.getFirstDay(this.nowtime.year, this.nowtime.month)
+        },
+        deep:true
+      }
     },
     created() {
     },
@@ -63,6 +116,35 @@
       this.init()
     },
     methods: {
+      changeoyear(type){
+        if(type == 0){
+          this.originyear = this.originyear - 20
+        }else{
+          this.originyear = this.originyear + 20
+        }
+        this.getFirstDay(this.nowtime.year, this.nowtime.month)
+      },
+      createdyearlist(){
+        const origin = this.originyear
+        this.year=[{year:origin}]
+        for(let i=0;i<19;i++){
+          this.year.push(
+            {year:origin+1+i}
+          )
+        }
+      },
+      checkmaxday(){
+        const max = this.getMonthDay(this.nowtime.year, this.nowtime.month)
+        if(this.nowtime.day>max){
+          this.nowtime.day=max
+        }
+      },
+      checkmonth(month){
+        this.nowtime.month = month
+      },
+      checkyear(year){
+        this.nowtime.year = year
+      },
       checkday(el){
         console.log(el.target)
         if(el.target.className.indexOf("cancheck")>-1){
@@ -213,6 +295,7 @@
       },
       //判断某年某月的1号是星期几
       getFirstDay(_year, _month) {
+        this.checkmaxday()
         let allDay = 0, y = _year - 1, i = 1;
         allDay = y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) + 1;
         for (; i < _month; i++) {
@@ -326,6 +409,7 @@
         }
         console.log(arr, 'arr')
         this.day = arr
+        this.createdyearlist()
         return allDay % 7;
       }
     },
