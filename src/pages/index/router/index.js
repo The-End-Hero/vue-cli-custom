@@ -13,7 +13,8 @@ import MyResume from '@/components/MyResume'
 import MyRecommend from '@/components/MyRecommend'
 import MyApply from '@/components/MyApply'
 import MyCollection from '@/components/MyCollection'
-
+import MyIntegral from '@/components/MyIntegral'
+import Test from '@/components/Test'
 
 Vue.use(Router)
 
@@ -23,6 +24,10 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld,
+    },
+    {
+      path:'/test',
+      component: Test,
     },
     {
       path: '/UserCenter',
@@ -44,6 +49,9 @@ export default new Router({
         {
           path: 'MyCollection', component: MyCollection
         },
+        {
+          path: 'MyIntegral', component: MyIntegral
+        }
       ]
     },
     {

@@ -1,14 +1,33 @@
 {
   "presets": [
-    ["env", {
-      "modules": false
-    }],
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
     "stage-2",
     "react"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [
+    [
+      "component",
+      [
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-chalk"
+        }
+      ]
+    ],
+    "transform-runtime"
+  ],
   "env": {
     "test": {
-      "presets": ["env", "stage-2", "react"]    }
+      "presets": [
+        "env",
+        "stage-2",
+        "react"
+      ]
+    }
   }
 }
