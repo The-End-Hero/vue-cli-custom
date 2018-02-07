@@ -23,6 +23,7 @@
 </template>
 
 <script>
+  import './index.scss'
   import draggable from 'vuedraggable'
   export default {
     name: 'index',
