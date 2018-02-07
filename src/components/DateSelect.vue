@@ -67,7 +67,7 @@
 </template>
 
 <script>
-  import clickoutside from '../assets/js/clickoutside';
+  import clickoutside from '../pages/index/assets/clickoutside';
   export default {
     name: 'Header',
     data() {
