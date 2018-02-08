@@ -19,11 +19,11 @@ export default class App extends Component {
     const {flexDirectionValue, flexWrapValue, justifyContentValue, alignItemsValue, alignContentValue} = this.state
     return (
       <div>
-        <div>
+        <div className="onetap">
           display:flex/inline-flex;<br/>
           设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效 <br/>
           水平的主轴（main axis）和垂直的交叉轴（cross axis） <br/>
-          六个 容器 属性：<br/>
+          六个 <strong>容器</strong> 属性：<br/>
           1.flex-direction<br/>
           2.flex-wrap<br/>
           3.flex-flow<br/>
@@ -156,6 +156,20 @@ export default class App extends Component {
           <Flex propwidth='600px' info="align-content 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用(需要设置flex-wrap: wrap)。 stretch (默认值）：轴线占满整个交叉轴。"
                 containerAttr={{alignContent: alignContentValue,flexWrap: 'wrap',height:'400px'}}></Flex>
         </div>
+
+
+
+        <div className="onetap">
+          以下6个属性设置在<strong>项目</strong>上。<br/>
+
+          <strong>1.order:&lt;integer&gt;; </strong>属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。<br/>
+          <strong>2.flex-grow:&lt;number&gt;;</strong> 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br/>
+          <strong>3.flex-shrink:&lt;number&gt;;</strong> 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。<br/>
+          <strong>4.flex-basis:&lt;length&gt;||auto;</strong> 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。<br/>
+          <strong>5.flex: none | [ &lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ]</strong>属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。<br/>
+          <strong>6.align-self :auto | flex-start | flex-end | center | baseline | stretch;</strong>属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br/>
+        </div>
+
       </div>
     );
   }
