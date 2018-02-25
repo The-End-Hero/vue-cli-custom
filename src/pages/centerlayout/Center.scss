@@ -1,0 +1,30 @@
+.showdetail{
+  min-width: 200px;
+  padding: 10px;
+  background-color: gainsboro;
+  word-wrap: break-word;
+}
+.showout{
+  width: 400px;
+  height: 400px;
+  background-color: #32be78;
+  position: relative;
+}
+.showin{
+  width: 100px;
+  height: 100px;
+  background-color: #e6a23c;
+  position: relative;
+}
+.nostd{
+  position: absolute;
+  word-wrap: break-word;
+  max-width: 100px;
+  background-color: rgba(0,0,0,0.3);
+  color: #ffffff;
+  font-size: 12px;
+  //box-shadow: 0px 0px 0px 0px #cccccc;
+}
+.show{
+  display: flex;
+}
