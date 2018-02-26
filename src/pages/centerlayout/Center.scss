@@ -20,11 +20,20 @@
   position: absolute;
   word-wrap: break-word;
   max-width: 100px;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.7);
   color: #ffffff;
   font-size: 12px;
-  //box-shadow: 0px 0px 0px 0px #cccccc;
+  bottom: 100%;
+  //left: 50%;
+  //transform: translate(-50%,0);
 }
 .show{
   display: flex;
+  padding-top: 80px;
+}
+.onetap{
+  background-color: #f5f5f5;
+  box-shadow: 2px 2px 2px 1px #cccccc;
+  margin-bottom: 30px;
+  padding: 20px;
 }
