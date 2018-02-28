@@ -1,0 +1,53 @@
+.polling_message {
+  color: white;
+  float: left;
+  margin-right: 2%;
+}
+
+.view_port {
+  background-color: black;
+  height: 25px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cylon_eye {
+  color: white;
+  height: 100%;
+  width: 20%;
+
+  background-color: red;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+  animation: move_eye 4s linear 0s infinite alternate;
+}
+
+@keyframes move_eye {
+  from {
+    margin-left: -20%;
+  }
+  to {
+    margin-left: 100%;
+  }
+}
+
+
+
+.linear {
+  width: 50px;
+  height: 50px;
+  background-color: #ff0000;
+  transition:  all 2s linear;
+}
+.linear:hover {
+  transform:  translateX(100px);
+}
+
+.custom {
+  width: 50px;
+  height: 50px;
+  background-color: #00ff00;
+  transition:  all 2s cubic-bezier(.94,-0.25,.32,1.31);
+}
+.custom:hover {
+  transform:  translateX(200px);
+}
