@@ -1,57 +1,248 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <!--<h2>Essential Links</h2>-->
-    <!--<ul>-->
-      <!--<li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>-->
-      <!--<li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>-->
-      <!--<li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>-->
-      <!--<li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>-->
-      <!--<br>-->
-      <!--<li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>-->
-    <!--</ul>-->
-    <!--<h2>Ecosystem</h2>-->
-    <!--<ul>-->
-      <!--<li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>-->
-      <!--<li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>-->
-      <!--<li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>-->
-      <!--<li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>-->
-    <!--</ul>-->
-    <h2>目录</h2>
-    <ul>
-      <li><a href="/vuelists.html">vue源码解析</a></li>
-      <li><a href="/centerlayout.html">居中布局</a></li>
-      <li><a href="/flexlayout.html">flex布局</a></li>
-      <li><a href="/animate.html">CSS动画</a></li>
-    </ul>
+    <!-- 代码 开始 -->
+    <canvas id="c"></canvas>
+    <div class="content">
+      <h1>{{ msg }}</h1>
+      <h2>目录</h2>
+      <ul>
+        <li><a href="/vuelists.html">vue源码解析</a></li>
+        <li><a href="/centerlayout.html">居中布局</a></li>
+        <li><a href="/flexlayout.html">flex布局</a></li>
+        <li><a href="/animate.html">CSS动画</a></li>
+      </ul>
+    </div>
+
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Hello World!'
+  export default {
+    name: 'HelloWorld',
+    data() {
+      return {
+        msg: 'Hello World!'
+      }
+    },
+    mounted() {
+      function aa() {
+
+        var c = document.getElementById('c'),
+          $ = c.getContext('2d'),
+          w = c.width = window.innerWidth,
+          h = c.height = window.innerHeight;
+
+        var i, bubblesNumber = w * h > 750000 ? 200 : 150,
+          objects = [],
+          maxRadius = w * h > 500000 ? 50 : 35,
+          maxYVelocity = 2;
+
+        function randomInRange(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        function insertElementsAtIndex(index, arrayTo, arrayFrom, removeCount) {
+          var removed = false;
+          for (var i = arrayFrom.length - 1; i >= 0; i--) {
+            if (removeCount && !removed) {
+              arrayTo.splice(index, removeCount, arrayFrom[i]);
+              removed = true;
+              continue;
+            }
+            arrayTo.splice(index, 0, arrayFrom[i]);
+          }
+        }
+
+        function Vector(x, y) {
+          this.x = x || 0;
+          this.y = y || 0;
+        }
+
+        Vector.prototype.add = function (v) {
+          this.x += v.x;
+          this.y += v.y;
+          return this;
+        };
+
+        Vector.prototype.multiply = function (value) {
+          this.x *= value;
+          this.y *= value;
+          return this;
+        };
+
+        Vector.prototype.getMagnitude = function () {
+          return Math.sqrt(this.x * this.x + this.y * this.y);
+        };
+
+        function Fragment(position, velocity, radius, hue) {
+          this.position = position;
+          this.velocity = velocity;
+          this.startSpeed = this.velocity.getMagnitude();
+          this.radius = radius;
+          this.hue = hue;
+        }
+
+        Fragment.prototype.update = function (world) {
+          this.velocity.multiply(world.physicalProperties.friction);
+          this.position.add(this.velocity);
+          this.radius *= this.velocity.getMagnitude() / this.startSpeed;
+          if (this.radius < 0.1) {
+            world.objects.splice(world.objects.indexOf(this), 1);
+          }
+        }
+
+        Fragment.prototype.render = function ($) {
+          $.beginPath();
+          $.fillStyle = 'hsl(' + this.hue + ', 100%, 50%)';
+          $.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+          $.fill();
+        };
+
+        function Bubble(x, y, speed, radius, fragments, swing, hue) {
+          this.x = x;
+          this.y = y;
+          this.startX = this.x;
+          this.speed = speed;
+          this.radius = radius;
+          this.fragments = fragments;
+          this.swing = swing;
+          this.hue = hue;
+        }
+
+        Bubble.prototype.update = function (world) {
+          this.x = this.startX + Math.cos(this.y / 80) * this.swing;
+          this.y += this.speed;
+          if (this.y + this.radius < 0) {
+            this.y = world.physicalProperties.height + this.radius;
+          }
+        }
+
+        Bubble.prototype.render = function ($) {
+          $.beginPath();
+          $.fillStyle = 'hsl(' + this.hue + ', 100%, 50%)';
+          $.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+          $.fill();
+        };
+
+        Bubble.prototype.pop = function (world) {
+          var arr = [];
+          for (var i = 0; i < this.fragments; i++) {
+            arr.push(new Fragment(new Vector(this.x, this.y), new Vector(randomInRange(-2, 2), randomInRange(-2, 2)), randomInRange(2, this.radius / 4), this.hue));
+          }
+          insertElementsAtIndex(world.objects.indexOf(this), world.objects, arr, 1);
+        };
+
+        function World(physicalProperties, objects, ctx, background) {
+          this.physicalProperties = physicalProperties;
+          this.objects = objects;
+          this.ctx = ctx;
+          this.background = background;
+          this.frameID = 0;
+        }
+
+        World.prototype.update = function () {
+          for (var i = 0; i < this.objects.length; i++) {
+            this.objects[i].update(this);
+          }
+        };
+
+        World.prototype.render = function () {
+          this.ctx.clearRect(0, 0, this.physicalProperties.width, this.physicalProperties.height);
+          if (this.background) {
+            this.ctx.fillStyle = this.background;
+            this.ctx.fillRect(0, 0, this.physicalProperties.width, this.physicalProperties.height);
+          }
+          for (var i = 0; i < this.objects.length; i++) {
+            this.objects[i].render(this.ctx);
+          }
+        };
+
+        World.prototype.animate = function () {
+          this.update();
+          this.render();
+          this.frameID = requestAnimationFrame(this.animate.bind(this));
+        };
+
+        for (i = 0; i < bubblesNumber; i++) {
+          objects.push(new Bubble(Math.random() * w, Math.random() * h, -randomInRange(0.5, maxYVelocity), randomInRange(5, maxRadius), randomInRange(7, 10), randomInRange(-40, 40), randomInRange(0, 360)));
+        }
+
+        var world = new World({
+          width: c.width,
+          height: c.height,
+          friction: 0.997
+        }, objects, $, 'rgb(0, 0, 0)');
+
+        $.globalCompositeOperation = 'lighter';
+
+        world.animate();
+
+        window.addEventListener('resize', function () {
+          w = world.physicalProperties.width = c.width = window.innerWidth;
+          h = world.physicalProperties.height = c.height = window.innerHeight;
+          $.globalCompositeOperation = 'lighter';
+        });
+
+        window.addEventListener('mousemove', function (e) {
+          for (var i = 0; i < world.objects.length; i++) {
+            if ((world.objects[i] instanceof Bubble) && (e.clientX > world.objects[i].x - world.objects[i].radius && e.clientX < world.objects[i].x + world.objects[i].radius && e.clientY < world.objects[i].y + world.objects[i].radius && e.clientY > world.objects[i].y - world.objects[i].radius)) {
+              world.objects[i].pop(world);
+            }
+          }
+        });
+
+        window.addEventListener('touchmove', function (e) {
+          for (var i = 0; i < world.objects.length; i++) {
+            if ((world.objects[i] instanceof Bubble) && (e.touches[0].clientX > world.objects[i].x - world.objects[i].radius && e.touches[0].clientX < world.objects[i].x + world.objects[i].radius && e.touches[0].clientY < world.objects[i].y + world.objects[i].radius && e.touches[0].clientY > world.objects[i].y - world.objects[i].radius)) {
+              world.objects[i].pop(world);
+            }
+          }
+        });
+
+      };
+      aa();
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  h1, h2 {
+    font-weight: normal;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    margin: 0 10px;
+  }
+
+  a {
+    color: #42b983;
+  }
+
+  canvas {
+    min-height: 100vh;
+    min-width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .content {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 100px;
+    width: 1200px;
+    box-shadow: 1px 1px 5px 0px #cccccc;
+    min-height: 70vh;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.97);
+  }
 </style>
