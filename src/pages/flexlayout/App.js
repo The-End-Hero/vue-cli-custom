@@ -23,7 +23,7 @@ export default class App extends Component {
           display:flex/inline-flex;<br/>
           设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效 <br/>
           水平的主轴（main axis）和垂直的交叉轴（cross axis） <br/>
-          六个 <strong>容器</strong> 属性：<br/>
+          六个 <strong>容器(即display:flex;同级)</strong> 属性：<br/>
           1.flex-direction<br/>
           2.flex-wrap<br/>
           3.flex-flow<br/>

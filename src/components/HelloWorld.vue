@@ -11,17 +11,31 @@
         <li><a href="/flexlayout.html">flex布局</a></li>
         <li><a href="/animate.html">CSS动画</a></li>
       </ul>
+      <button @click="opentest">open</button>
     </div>
+
+    <!--<Testpop ref="testpop"></Testpop>-->
 
   </div>
 </template>
 
 <script>
+//  import Testpop from './Testpop.vue'
   export default {
     name: 'HelloWorld',
     data() {
       return {
         msg: 'Hello World!'
+      }
+    },
+    components:{
+//      Testpop
+    },
+    methods:{
+      opentest(){
+        console.log(13)
+        console.log(this.$refs.testpop)
+        this.$refs.testpop.opentest()
       }
     },
     mounted() {

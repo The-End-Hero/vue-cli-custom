@@ -13,7 +13,9 @@ export default class App extends Component {
       alignContentValue: 'stretch'
     };
   }
-
+  componentDidMount(){
+    console.log('App mount')
+  }
   render() {
     console.log(this.state.list, 'list');
     const {flexDirectionValue, flexWrapValue, justifyContentValue, alignItemsValue, alignContentValue} = this.state

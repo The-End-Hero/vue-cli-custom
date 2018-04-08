@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Center.scss'
 import { Tooltip, Button } from 'antd'
-import {markdown} from 'markdown';
+// import {markdown} from 'markdown';
 export default class Center extends Component {
   constructor(props) {
     super(props);
@@ -23,11 +23,11 @@ export default class Center extends Component {
   }
 
   componentDidMount() {
-    console.log( markdown.toHTML( "Hello *World*!" ) );
-    console.log( markdown.toHTML( "Hello *World*!" ) );
-    console.log( markdown.toHTML( "Hello *World*!" ) );
-    console.log( markdown.toHTML( "Hello *World*!" ) );
-    console.log( markdown.toHTML( "Hello *World*!" ) );
+    // console.log( markdown.toHTML( "Hello *World*!" ) );
+    // console.log( markdown.toHTML( "Hello *World*!" ) );
+    // console.log( markdown.toHTML( "Hello *World*!" ) );
+    // console.log( markdown.toHTML( "Hello *World*!" ) );
+    // console.log( markdown.toHTML( "Hello *World*!" ) );
 
     var marked = require('marked');
     marked.setOptions({
