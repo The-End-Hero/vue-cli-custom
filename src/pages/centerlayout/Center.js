@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Center.scss'
 import { Tooltip, Button } from 'antd'
 // import {markdown} from 'markdown';
-import {marked} from 'marked';
+// import {marked} from 'marked';
 export default class Center extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +31,7 @@ export default class Center extends Component {
     // console.log( markdown.toHTML( "Hello *World*!" ) );
     // console.log( markdown.toHTML( "Hello *World*!" ) );
 
-    // var marked = require('marked');
+    var marked = require('marked');
     marked.setOptions({
       renderer: new marked.Renderer(),
       gfm: true,
