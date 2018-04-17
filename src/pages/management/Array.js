@@ -73,15 +73,17 @@ export default class Array extends Component {
       expandedKeys: ['0-0', '0-0-0', '0-0-0-0'],
     };
   }
-  onDragEnter = (info) => {
-    console.log(info);
+  onDragEnter = ({event, node, expandedKeys}) => {
+    console.log({event, node, expandedKeys},'{event, node, expandedKeys}');
+    // alert(33333)
     // expandedKeys 需要受控时设置
     // this.setState({
     //   expandedKeys: info.expandedKeys,
     // });
   }
   onDrop = (info) => {
-    console.log(info);
+    console.log(info,'info');
+    // alert(info)
     const dropKey = info.node.props.eventKey;
     const dragKey = info.dragNode.props.eventKey;
     const dropPos = info.node.props.pos.split('-');
@@ -129,6 +131,27 @@ export default class Array extends Component {
   onRightClick=({event, node})=>{
     console.log({event, node},'{event, node}')
   }
+  onDragEnd=({event, node})=>{
+    console.log({event, node},'{event, node} dragend')
+  }
+  onDragStart=({event, node})=>{
+    console.log({event, node},'{event, node} dragstart')
+    sessionStorage.setItem('less',node.props.title)
+  }
+  divdrapover=(e)=>{
+    // console.log(1000)
+    // console.log(e)
+    e.preventDefault();
+    return true
+  }
+  divdrop=(e)=>{
+    e.preventDefault();
+    console.log(2000)
+    console.log(e)
+    console.log(e.target)
+    console.log(sessionStorage.getItem('less'),'sessionStorage.getItem(\'less\')')
+    console.log(arguments,'arguments')
+  }
   render(){
     const {gData} = this.state
     const loop = data => data.map((item) => {
@@ -148,9 +171,15 @@ export default class Array extends Component {
           draggable
           onDragEnter={this.onDragEnter}
           onDrop={this.onDrop}
+          onDragEnd={this.onDragEnd}
+          onDragStart={this.onDragStart}
         >
           {loop(gData)}
         </Tree>
+        <div draggable="true">333</div>
+        <div style={{backgroundColor:'red'}} onDragOver={this.divdrapover} onDrop={this.divdrop}>
+          123123
+        </div>
       </div>
     )
   }
