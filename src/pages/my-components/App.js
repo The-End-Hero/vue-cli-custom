@@ -15,10 +15,10 @@ export default class App extends Component {
     const {} = this.state
     return (
       <div>
-        <button onClick={this.testSnackBar('success')}>测试SnackBar!</button>
-        <button onClick={this.testSnackBar('warning')}>测试SnackBar!</button>
-        <button onClick={this.testSnackBar('info')}>测试SnackBar!</button>
-        <button onClick={this.testSnackBar('error')}>测试SnackBar!</button>
+        <button onClick={this.testSnackBar.bind(this,'success')}>测试SnackBar!</button>
+        <button onClick={this.testSnackBar.bind(this,'warning')}>测试SnackBar!</button>
+        <button onClick={this.testSnackBar.bind(this,'info')}>测试SnackBar!</button>
+        <button onClick={this.testSnackBar.bind(this,'error')}>测试SnackBar!</button>
       </div>
     );
   }
